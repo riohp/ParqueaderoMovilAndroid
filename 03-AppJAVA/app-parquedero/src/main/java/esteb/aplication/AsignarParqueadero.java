@@ -1,0 +1,268 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
+ */
+package esteb.aplication;
+import esteb.aplication.IngresoVehiculoP;
+import com.google.gson.*;
+import consumoApi.ConsumoApi;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
+import javax.swing.*;
+import java.awt.*;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonElement;
+import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import com.google.gson.JsonSyntaxException;
+/**
+ *
+ * @author INSTRUCTOR
+ */
+public class AsignarParqueadero extends javax.swing.JPanel {
+    ConsumoApi consumoApi = new ConsumoApi();
+
+    /**
+     * Creates new form dashboard
+     */
+
+    Map<Integer, String> vendedores = new HashMap<>();
+    Map<Integer, String> parqueaderos = new HashMap<>();
+    public AsignarParqueadero() {
+        initComponents();
+        init();
+        btnRegistrar.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                asignarParqueadero();
+            }
+        });
+    }
+
+    private void init() {
+        JsonObject jsonObject = JsonParser.parseString(consumoApi.consumoGET("http://localhost/APIenPHP/Usuarios/Obtener_vp.php")).getAsJsonObject();
+        // clave de  los arreglos "registros"
+        JsonArray vendedoresArray = jsonObject.getAsJsonArray("registros");
+        JsonArray parqueaderosArray = jsonObject.getAsJsonArray("parkings");
+
+        //aqui estoy iterando sobre el arreglo de vendedores y parqueaderos para llenar los combobox
+        for (JsonElement element : vendedoresArray) {
+            JsonObject vendedorObject = element.getAsJsonObject();
+
+
+            int id = vendedorObject.get("idusuario").getAsInt();
+            String nombre = vendedorObject.get("nombreusuario").getAsString();
+
+            vendedores.put(id, nombre);
+            jComboBoxvendedor.addItem(nombre);
+        }
+
+        for (JsonElement element : parqueaderosArray) {
+            JsonObject parqueaderoObject = element.getAsJsonObject();
+
+            int id = parqueaderoObject.get("idparqueadero").getAsInt();
+            String nombre = parqueaderoObject.get("nombreparqueadero").getAsString();
+
+            parqueaderos.put(id, nombre);
+            jComboBoxparqueadero.addItem(nombre);
+        }
+    }
+
+    private void asignarParqueadero() {
+        String vendedorSeleccionado = jComboBoxvendedor.getSelectedItem().toString();
+        String parqueaderoSeleccionado = jComboBoxparqueadero.getSelectedItem().toString();
+
+        if (vendedorSeleccionado.equals("Seleccionar Vendedor") || parqueaderoSeleccionado.equals("Seleccionar Parqueadero")) {
+            // Maneja el caso en el que no se haya seleccionado un vendedor o un parqueadero
+            JOptionPane.showMessageDialog(this, "Por favor, selecciona un vendedor y un parqueadero.");
+            return;
+        }
+
+        // Construye un Map con los datos a enviar en la solicitud POST
+        Map<String, String> postData = new HashMap<>();
+        postData.put("idusuario", String.valueOf(vendedores.entrySet().stream().filter(entry -> entry.getValue().equals(vendedorSeleccionado)).findFirst().get().getKey()));
+        postData.put("idparqueadero", String.valueOf(parqueaderos.entrySet().stream().filter(entry -> entry.getValue().equals(parqueaderoSeleccionado)).findFirst().get().getKey()));
+
+        try {
+            // Realiza la solicitud POST
+            String response = consumoApi.consumoPOST("http://localhost/APIenPHP/Usuarios/asigno.php", postData).trim();
+
+            // Verifica si la respuesta está vacía
+            if (response.isEmpty()) {
+                JOptionPane.showMessageDialog(this, "Error: La respuesta del servidor está vacía.");
+                return;
+            }
+
+            // Analiza la respuesta del servidor (response) y muestra un mensaje adecuado
+            JsonObject jsonResponse = JsonParser.parseString(response).getAsJsonObject();
+            if (jsonResponse.has("mensaje")) {
+                JOptionPane.showMessageDialog(this, "Asignación exitosa: " + jsonResponse.get("mensaje").getAsString());
+            } else if (jsonResponse.has("error")) {
+                JOptionPane.showMessageDialog(this, "Error: " + jsonResponse.get("error").getAsString());
+            }
+        } catch (JsonSyntaxException e) {
+            JOptionPane.showMessageDialog(this, "Error: La respuesta del servidor no es un JSON válido.");
+        }
+
+    }
+
+    /**
+     * This method is called from within the constructor to initialize the form.
+     * WARNING: Do NOT modify this code. The content of this method is always
+     * regenerated by the Form Editor.
+     */
+    @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    private void initComponents() {
+
+        bgBorder = new esteb.swing.PanelUI();
+        panelUI1 = new esteb.swing.PanelUI();
+        btnRegistrar = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jComboBoxparqueadero = new javax.swing.JComboBox<>();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jComboBoxvendedor = new javax.swing.JComboBox<>();
+        jLabel8 = new javax.swing.JLabel();
+
+        setBackground(new java.awt.Color(17, 17, 17));
+
+        bgBorder.setBackground(new java.awt.Color(216, 216, 216));
+        bgBorder.setRoundbottomLeft(50);
+        bgBorder.setRoundtopLeft(50);
+
+        panelUI1.setBackground(new java.awt.Color(236, 236, 236));
+        panelUI1.setRoundbottomLeft(25);
+        panelUI1.setRoundbottomRight(25);
+        panelUI1.setRoundtopLeft(25);
+        panelUI1.setRoundtopRight(25);
+
+        btnRegistrar.setBackground(new java.awt.Color(100, 205, 51));
+        btnRegistrar.setFont(new java.awt.Font("Ubuntu", 1, 36)); // NOI18N
+        btnRegistrar.setForeground(new java.awt.Color(255, 255, 255));
+        btnRegistrar.setText("ASIGNAR");
+
+        jLabel1.setBackground(new java.awt.Color(0, 0, 255));
+        jLabel1.setFont(new java.awt.Font("Ubuntu", 1, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("PARQUEADERO");
+
+        jComboBoxparqueadero.setBackground(new java.awt.Color(255, 255, 255));
+        jComboBoxparqueadero.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        jComboBoxparqueadero.setForeground(new java.awt.Color(0, 0, 0));
+        jComboBoxparqueadero.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar Parqueadero" }));
+        jComboBoxparqueadero.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBoxparqueaderoActionPerformed(evt);
+            }
+        });
+
+        jLabel2.setBackground(new java.awt.Color(0, 0, 255));
+        jLabel2.setFont(new java.awt.Font("Ubuntu", 1, 36)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("ASIGNAR");
+
+        jLabel7.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel7.setText("Parqueadero");
+
+        jComboBoxvendedor.setBackground(new java.awt.Color(255, 255, 255));
+        jComboBoxvendedor.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        jComboBoxvendedor.setForeground(new java.awt.Color(0, 0, 0));
+        jComboBoxvendedor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar Vendedor" }));
+
+        jLabel8.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel8.setText("Vendedor");
+
+        javax.swing.GroupLayout panelUI1Layout = new javax.swing.GroupLayout(panelUI1);
+        panelUI1.setLayout(panelUI1Layout);
+        panelUI1Layout.setHorizontalGroup(
+            panelUI1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelUI1Layout.createSequentialGroup()
+                .addContainerGap(60, Short.MAX_VALUE)
+                .addGroup(panelUI1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(jComboBoxvendedor, javax.swing.GroupLayout.PREFERRED_SIZE, 402, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 402, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jComboBoxparqueadero, javax.swing.GroupLayout.PREFERRED_SIZE, 402, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 402, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel2)
+                    .addComponent(btnRegistrar))
+                .addGap(60, 60, 60))
+        );
+        panelUI1Layout.setVerticalGroup(
+            panelUI1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelUI1Layout.createSequentialGroup()
+                .addGap(41, 41, 41)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel1)
+                .addGap(83, 83, 83)
+                .addComponent(jLabel7)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jComboBoxparqueadero, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel8)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jComboBoxvendedor, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 95, Short.MAX_VALUE)
+                .addComponent(btnRegistrar, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30))
+        );
+
+        javax.swing.GroupLayout bgBorderLayout = new javax.swing.GroupLayout(bgBorder);
+        bgBorder.setLayout(bgBorderLayout);
+        bgBorderLayout.setHorizontalGroup(
+            bgBorderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bgBorderLayout.createSequentialGroup()
+                .addContainerGap(263, Short.MAX_VALUE)
+                .addComponent(panelUI1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(164, 164, 164))
+        );
+        bgBorderLayout.setVerticalGroup(
+            bgBorderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(bgBorderLayout.createSequentialGroup()
+                .addGap(59, 59, 59)
+                .addComponent(panelUI1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(70, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(bgBorder, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(0, 0, 0))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(bgBorder, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+    }// </editor-fold>//GEN-END:initComponents
+
+    private void jComboBoxparqueaderoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxparqueaderoActionPerformed
+        
+    }//GEN-LAST:event_jComboBoxparqueaderoActionPerformed
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private esteb.swing.PanelUI bgBorder;
+    private javax.swing.JButton btnRegistrar;
+    private javax.swing.JComboBox<String> jComboBoxparqueadero;
+    private javax.swing.JComboBox<String> jComboBoxvendedor;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private esteb.swing.PanelUI panelUI1;
+    // End of variables declaration//GEN-END:variables
+}
