@@ -1,6 +1,6 @@
-# Equipo de Desarrollo - Proyecto Parqueadero - App Movil
+# Development team - Parking Project / Movil App 
 
-## Responsable de la Rama `dev03`
+##  Branch Responsible `dev03`
 
-- **Nombre:** Santiago Ramírez
-- **Posición:** Desarrollador Trainee
+- **Name:** Santiago Ramírez
+- **Position:** Trainee Developer
