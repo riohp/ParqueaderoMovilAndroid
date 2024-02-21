@@ -1,6 +1,6 @@
 # Development team - Parking Project / Movil App 
 
-##  Branch Responsible `equipo de desarrollo`
+##  `equipo de desarrollo`
 
 - **Team:** 
 - **person #1:**  Esteban Espinosa Mesa
