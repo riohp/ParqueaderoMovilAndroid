@@ -1,6 +1,6 @@
 # Development team - Parking Project / Movil App 
 
-##  `equipo de desarrollo`
+##  `Equipo de desarrollo`
 
 - **Team:** 
 - **person #1:**  Esteban Espinosa Mesa
