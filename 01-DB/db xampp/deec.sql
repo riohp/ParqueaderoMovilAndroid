@@ -1,4 +1,4 @@
-DROP DATABASE parqueadero_deec;
+
 CREATE DATABASE parqueadero_deec;
 USE parqueadero_deec;
 
