@@ -1,11 +1,6 @@
-# Development team - Parking Project / Movil App 
-
-##  Branch Responsible `dev04`
-
-- **Name:** Carlos Henao
-- **Position:** Trainee Developer
-
-  
-## Contribution
-
-If you wish to contribute to the project, be sure to coordinate with Carlos Henao or the development team to discuss any changes you wish to make. This helps to maintain consistency and code quality.
+Equipo de desarrollo - Proyecto Aparcamiento / Aplicación Móvil
+Responsable de sucursaldev04
+Nombre:   Carlos Guillermo Henao Velasquez
+Puesto: Desarrollador en prácticas
+Contribución
+Si desea contribuir al proyecto, asegúrese de coordinar con Carlos Henao o el equipo de desarrollo para discutir cualquier cambio que desee realizar. Esto ayuda a mantener la coherencia y la calidad del código.
