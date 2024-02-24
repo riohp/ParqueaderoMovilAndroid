@@ -1,7 +1,4 @@
 <?php 
-header("Access-Control-Allow-Origin: * "); // Permite el acceso desde cualquier origen, o usa "http://localhost" si solo quieres permitirlo desde localhost.
-header("Access-Control-Allow-Methods: GET, POST");
-header("Acess-Control-Allow-Headers: Content-Type");
 
 include '../Conexion.php';
 
