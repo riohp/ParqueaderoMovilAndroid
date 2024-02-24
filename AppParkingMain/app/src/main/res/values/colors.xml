@@ -17,7 +17,9 @@
 
     <color name="amarillo_dorado_intenso">#FFC306</color>
 
+    //Colores Rama
     <color name="md_theme_light_yellow">#f4f1bb</color>
-
+    <color name="dark_blue">#333e63</color>f5f5fa
+    <color name="ligth_white">#f5f5fa</color>
 
 </resources>
