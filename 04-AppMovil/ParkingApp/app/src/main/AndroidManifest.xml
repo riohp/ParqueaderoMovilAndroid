@@ -13,10 +13,18 @@
         android:theme="@style/Theme.ParkingApp"
         tools:targetApi="31">
         <activity
+            android:name=".Agergar_vendedor"
+            android:exported="false" />
+        <activity
+            android:name=".Consulta_servicio"
+            android:exported="false" />
+        <activity
             android:name=".Home"
             android:exported="true"> <!-- Exported debe ser true para poder ser el punto de entrada -->
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
