@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="horizontal"
-    tools:context=".Agergar_vendedor">
+    tools:context="com.example.appparking.com.example.parkingapp.Agergar_vendedor">
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -45,18 +45,18 @@
                     android:textStyle="bold" />
 
                 <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="50dp"
-                    app:boxStrokeColor="@android:color/black"
                     android:hint="Documento"
-                    app:hintTextColor="@android:color/black"
                     app:boxBackgroundMode="outline"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    app:boxCornerRadiusBottomEnd="5dp"
+                    app:boxCornerRadiusBottomStart="5dp"
                     app:boxCornerRadiusTopEnd="5dp"
                     app:boxCornerRadiusTopStart="5dp"
-                    app:boxCornerRadiusBottomEnd="5dp"
-                    app:boxCornerRadiusBottomStart="5dp">
+                    app:boxStrokeColor="@android:color/black"
+                    app:hintTextColor="@android:color/black">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"
