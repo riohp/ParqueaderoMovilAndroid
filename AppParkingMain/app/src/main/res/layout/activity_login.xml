@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/md_theme_light_yellow"
     android:orientation="horizontal"
-    tools:context=".ui.authentication.Login">
+    tools:context=".authentication.Login">
 
     <FrameLayout
         android:layout_width="match_parent"
