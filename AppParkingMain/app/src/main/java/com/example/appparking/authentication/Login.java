@@ -1,4 +1,4 @@
-package com.example.appparking.ui.authentication;
+package com.example.appparking.authentication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
