@@ -121,7 +121,7 @@
             android:textSize="20sp"
             android:fontFamily="@font/poppins_bold"
 
-            />
+        />
 
     </LinearLayout>
 
