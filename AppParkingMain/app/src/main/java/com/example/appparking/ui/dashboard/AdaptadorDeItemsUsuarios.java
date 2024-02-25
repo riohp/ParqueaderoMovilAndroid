@@ -52,7 +52,7 @@ public class AdaptadorDeItemsUsuarios extends RecyclerView.Adapter<AdaptadorDeIt
         TextView etpNombres;
         TextView etpEmail;
 
-        TextView etpEstado;
+        View etpEstado;
 
         TextView etqRol;
 
@@ -67,15 +67,14 @@ public class AdaptadorDeItemsUsuarios extends RecyclerView.Adapter<AdaptadorDeIt
 
         public void cargarDatos(Usuario persona) {
             etpNombres.setText(persona.getNombres());
-            etpEstado.setText(persona.getEstado());
             etpEmail.setText(persona.getEmail());
             etqIdentificacion.setText(persona.getIdentificacion());
             etqRol.setText(persona.getRol());
 
-            if(persona.getEstado().equals("ACTIVO")){
-                etpEstado.setTextColor(Color.GREEN);
-            }else{
-                etpEstado.setTextColor(Color.RED);
+            if (persona.getEstado().equals("ACTIVO")) {
+                etpEstado.setBackgroundColor(Color.GREEN);
+            } else {
+                etpEstado.setBackgroundColor(Color.RED);
             }
         }
     }

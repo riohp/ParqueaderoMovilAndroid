@@ -1,52 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="15dp"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="15dp"
         tools:context=".ui.dashboard.DashboardFragment"
 
 >
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-
-        <EditText
-            android:id="@+id/campo_busqueda"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="4"
-            android:padding="10dp"
-            android:hint="Buscar"
-            android:gravity="center"
-            android:background="@drawable/background_rounded_r"
-            android:textSize="20sp"
-            android:fontFamily="@font/poppins_extralight"
-            android:layout_marginRight="20dp"
-            android:layout_marginLeft="17dp"
-            />
+            android:orientation="horizontal">
+        <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/campo_busqueda"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:padding="10dp"
+                android:hint="Buscar"
+                android:gravity="center"
+                android:background="@drawable/background_rounded_r"
+                android:textSize="20sp"
+                android:fontFamily="@font/poppins_extralight"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="17dp"
+                android:elevation="3dp"
+        />
 
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/btn_buscar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:clickable="true"
-            android:backgroundTint="@color/cardview_light_background"
-            app:srcCompat="@android:drawable/ic_menu_search"
-            />
+
 
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerUsarios"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="15dp">
+            android:id="@+id/recyclerUsarios"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="15dp">
     </androidx.recyclerview.widget.RecyclerView>
 </LinearLayout>
