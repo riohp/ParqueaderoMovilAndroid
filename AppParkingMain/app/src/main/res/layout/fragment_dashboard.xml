@@ -16,22 +16,30 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <com.google.android.material.appbar.AppBarLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <com.google.android.material.search.SearchBar
-                android:id="@+id/campo_busqueda"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="ff" />
-        </com.google.android.material.appbar.AppBarLayout>
 
-        <com.google.android.material.search.SearchView
+        <EditText
+            android:id="@+id/campo_busqueda"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:hint="aaa"
-            app:layout_anchor="@id/search_bar">
-        </com.google.android.material.search.SearchView>
+            android:layout_height="wrap_content"
+            android:layout_weight="4"
+            android:padding="10dp"
+            android:hint="Buscar"
+            android:gravity="center"
+            android:background="@drawable/background_rounded_r"
+            android:textSize="20sp"
+            android:fontFamily="@font/poppins_extralight"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="17dp"
+            />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/btn_buscar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:backgroundTint="@color/cardview_light_background"
+            app:srcCompat="@android:drawable/ic_menu_search"
+            />
 
     </LinearLayout>
 
