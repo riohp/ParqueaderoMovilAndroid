@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Forma para el fondo del elemento con un borde blanco -->
+    <item>
+        <shape>
+            <solid android:color="#FFFBB1" /> <!-- Color de fondo -->
+            <stroke android:color="#FFFBB1" android:width="2dp" /> <!-- Borde blanco -->
+            <corners
+                    android:topLeftRadius="10dp"
+                    android:topRightRadius="10dp"
+            />
+        </shape>
+    </item>
+
+</selector>

@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:padding="10dp"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.assingment.AssigmentFragment">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background_rounded_r"
+        android:orientation="vertical"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginTop="80dp"
+        android:paddingBottom="45dp"
+        android:elevation="8dp"
+        >
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="60dp"
+                android:gravity="center"
+                android:text="Asigna un vendedor"
+                android:textSize="30sp"
+                android:fontFamily="@font/poppins_bold"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="a un parqueadero"
+                android:textSize="30sp"
+                android:fontFamily="@font/poppins_bold"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/vendedor"
+            style="@style/ExposedDropdownMenuWhiteWithBorder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="70dp"
+            android:hint="Seleccione un Vendedor"
+            app:boxCornerRadiusBottomEnd="5dp"
+            app:boxCornerRadiusBottomStart="5dp"
+            app:boxCornerRadiusTopEnd="5dp"
+            app:boxCornerRadiusTopStart="5dp"
+            app:hintTextColor="@color/black"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp">
+
+            <AutoCompleteTextView
+                android:id="@+id/etpVendedor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:textSize="20sp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/parqueadero"
+                style="@style/ExposedDropdownMenuWhiteWithBorder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="70dp"
+                android:hint="Seleccione un parqueadero"
+                app:boxCornerRadiusBottomEnd="5dp"
+                app:boxCornerRadiusBottomStart="5dp"
+                app:boxCornerRadiusTopEnd="5dp"
+                app:boxCornerRadiusTopStart="5dp"
+                app:boxStrokeColor="@color/black"
+                app:hintTextColor="@color/black"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp">
+
+                <AutoCompleteTextView
+                    android:id="@+id/etpParqueadero"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:textSize="20sp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+        <LinearLayout
+            android:layout_width="167dp"
+            android:layout_height="61dp"
+            android:layout_marginTop="35dp"
+            android:layout_marginBottom="20dp"
+            android:background="@android:color/black"
+            android:layout_gravity="center"
+            >
+
+            <Button
+                android:id="@+id/btnAsignar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/black"
+                android:text="Asignar"
+                android:textColor="@color/white"
+                android:textSize="25sp"
+                android:paddingTop="5dp"
+                android:fontFamily="@font/poppins_regular"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/btnRegrasarVista"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:clickable="true"
+            android:src="@drawable/baseline_arrow_back_24"
+            app:backgroundTint="@android:color/white"
+            app:boxStrokeColor="@android:color/black"
+            app:elevation="0dp"
+            app:fabCustomSize="48dp" />
+
+</FrameLayout>
