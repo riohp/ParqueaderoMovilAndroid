@@ -23,6 +23,7 @@
     <color name="md_theme_light_yellow">#f4f1bb</color>
     <color name="md_theme_ligth_white">#F5F5FA</color>
     <color name="md_theme_ligth_gray">#a6abb8</color>
+    <color name="md_theme_ligth_gray_v2">f5f5f5</color>
     <color name="md_theme_ligth_blue">#005f73</color>
     <color name="md_theme_light_onPrimary">#FFFFFF</color>
     <color name="md_theme_light_primaryContainer">#EADDFF</color>
@@ -39,7 +40,7 @@
     <color name="md_theme_light_onError">#FFFFFF</color>
     <color name="md_theme_light_errorContainer">#F9DEDC</color>
     <color name="md_theme_light_onErrorContainer">#410E0B</color>
-    <color name="md_theme_light_outline">#79747E</color>
+    <color name="md_theme_light_outline">#03A9F4</color>
     <color name="md_theme_light_background">#FFFBFE</color>
     <color name="md_theme_light_onBackground">#1C1B1F</color>
     <color name="md_theme_light_surface">#FFFBFE</color>
