@@ -11,46 +11,46 @@
 >
 
     <LinearLayout
-            android:layout_width="match_parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@drawable/background_bottom_rounded"
+        android:paddingTop="40dp"
+        android:paddingBottom="40dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:elevation="15dp"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:background="@drawable/background_bottom_rounded"
-            android:paddingTop="40dp"
-            android:paddingBottom="40dp"
-            android:paddingLeft="20dp"
-            android:paddingRight="20dp"
-            android:elevation="15dp"
-    >
-
-        <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Hola, "
-                android:fontFamily="@font/poppins_medium"
-                android:textColor="@android:color/black"
-                android:textSize="36dp"
-        >
+            android:text="Hola, "
+            android:fontFamily="@font/poppins_medium"
+            android:textColor="@android:color/black"
+            android:textSize="35dp"
+            >
         </TextView>
 
         <TextView
-                android:id="@+id/etqName"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Carlitos"
-                android:fontFamily="@font/poppins_medium"
-                android:textColor="@android:color/black"
-                android:textSize="36dp"
-        >
+            android:id="@+id/etqName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Carlitos"
+            android:fontFamily="@font/poppins_medium"
+            android:textColor="@android:color/black"
+            android:textSize="35dp"
+            >
         </TextView>
 
         <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="!"
-                android:fontFamily="@font/poppins_medium"
-                android:textColor="@android:color/black"
-                android:textSize="35dp"
-        >
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="!"
+            android:fontFamily="@font/poppins_medium"
+            android:textColor="@android:color/black"
+            android:textSize="35dp"
+            >
         </TextView>
 
     </LinearLayout>
@@ -181,6 +181,7 @@
         </LinearLayout>
 
     </LinearLayout>
+
 
 
 
