@@ -20,25 +20,26 @@
 
 
             <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/btnLoginBack"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:clickable="true"
-                android:src="@drawable/baseline_arrow_back_24"
-                app:backgroundTint="@color/md_theme_light_yellow"
-                app:boxStrokeColor="@android:color/black"
-                app:elevation="0dp"
-                app:fabCustomSize="48dp" />
-
+                    android:id="@+id/btnLoginBack"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:clickable="true"
+                    app:maxImageSize="35dp"
+                    android:src="@drawable/baseline_arrow_back_24"
+                    app:backgroundTint="@color/md_theme_light_yellow"
+                    app:boxStrokeColor="@android:color/black"
+                    app:elevation="0dp"
+                    app:fabCustomSize="50dp"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="30dp"
+                android:layout_marginLeft="0dp"
                 android:layout_marginTop="15dp"
                 android:text="LOGIN"
                 android:textColor="@android:color/black"
-                android:textSize="70sp"
-                android:textStyle="bold" />
+                android:textSize="64sp"
+                android:fontFamily="@font/poppins_bold"/>
+
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/etqCampoEmail"
@@ -99,14 +100,19 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Recuerdame"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:textSize="11dp"
+                    android:fontFamily="@font/poppins_regular"
+                />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="end"
                     android:text="OLVIDE MI CONTRASENA"
-                    android:textStyle="bold"></TextView>
+                    android:textSize="11dp"
+                    android:fontFamily="@font/poppins_bold"></TextView>
+
 
             </LinearLayout>
 
@@ -118,13 +124,14 @@
 
                 <Button
                     android:id="@+id/btnIniciarSesion"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="369dp"
+                    android:layout_height="64dp"
                     android:layout_weight="1"
                     android:backgroundTint="@android:color/black"
                     android:text="Iniciar Sesion"
                     android:textColor="@android:color/white"
-                    android:textSize="30sp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:textSize="18sp"
                     />
 
             </LinearLayout>
