@@ -14,16 +14,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/background_bottom_rounded"
-        android:elevation="15dp"
+        android:elevation="5dp"
         android:orientation="horizontal"
         android:paddingLeft="20dp"
         android:paddingTop="20dp"
         android:paddingRight="20dp"
-        android:paddingBottom="15dp">
+        android:paddingBottom="100dp">
 
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:fontFamily="@font/poppins_medium"
             android:text="Hola, "
             android:textColor="@android:color/black"
@@ -212,7 +212,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins_bold"
-                    android:text="- - - - - - - - - - - - - - - "></TextView>
+                    android:text="- - - - - - - - - - - - - - - "/>
 
                 <TextView
                     android:layout_width="wrap_content"
