@@ -14,18 +14,18 @@ import com.example.appparking.R;
 
 import java.util.List;
 
-public class AdaptadorDeItemsUuarios extends RecyclerView.Adapter<AdaptadorDeItemsUuarios.ViewHolder> {
+public class AdaptadorDeItemsUsuarios extends RecyclerView.Adapter<AdaptadorDeItemsUsuarios.ViewHolder> {
 
     List<Usuario> listaUsuarios;
 
     Context contexto;
-    public AdaptadorDeItemsUuarios(List<Usuario> listaUsuarios) {
+    public AdaptadorDeItemsUsuarios(List<Usuario> listaUsuarios) {
         this.listaUsuarios = listaUsuarios;
     }
 
     @NonNull
     @Override
-    public AdaptadorDeItemsUuarios.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public AdaptadorDeItemsUsuarios.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.items_usuarios, parent, false);
@@ -34,7 +34,7 @@ public class AdaptadorDeItemsUuarios extends RecyclerView.Adapter<AdaptadorDeIte
     }
 
     @Override
-    public void onBindViewHolder(@NonNull AdaptadorDeItemsUuarios.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull AdaptadorDeItemsUsuarios.ViewHolder holder, int position) {
 
         Usuario temporal = listaUsuarios.get(position);
         holder.cargarDatos(temporal);

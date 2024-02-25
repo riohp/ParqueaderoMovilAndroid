@@ -12,36 +12,31 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppPArking"
         tools:targetApi="31">
-
+        <activity
+            android:name=".enablestatus.StatusCards"
+            android:exported="false" />
         <activity
             android:name=".authentication.Login"
             android:exported="false"
-            android:label="@string/app_name"/>
-
-
+            android:label="@string/app_name" />
         <activity
             android:name=".welcome.WelcomeActivity"
             android:exported="false"
             android:label="@string/app_name" />
-
-
         <activity
             android:name=".MainActivity"
             android:exported="true"
-            android:label="@string/app_name" >
+            android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-
-
         <activity
             android:name=".vehiclequery.VehicleQueryActivity"
             android:exported="true"
             android:label="@string/app_name" />
-
     </application>
 
 </manifest>
