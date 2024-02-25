@@ -47,6 +47,7 @@
     <color name="md_theme_light_shadow">#000000</color>
     <color name="md_theme_light_surfaceTint">#6750A4</color>
     <color name="md_theme_light_outlineVariant">#CAC4D0</color>
+    <color name="md_theme_light_pink">#fcf3ec</color>
     <color name="md_theme_light_scrim">#000000</color>
     <color name="md_theme_dark_primary">#D0BCFF</color>
     <color name="md_theme_dark_blue">#333e63</color>
