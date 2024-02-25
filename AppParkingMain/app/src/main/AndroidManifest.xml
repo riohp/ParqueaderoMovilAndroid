@@ -13,6 +13,9 @@
         android:theme="@style/Theme.AppPArking"
         tools:targetApi="31">
         <activity
+            android:name=".QueryParking.QueryParking"
+            android:exported="false" />
+        <activity
             android:name=".enablestatus.StatusCards"
             android:exported="false" />
         <activity

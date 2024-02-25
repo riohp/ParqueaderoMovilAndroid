@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/md_theme_ligth_gray_v2"
+    android:orientation="horizontal"
+    tools:context=".authentication.Login">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="25dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/btnLoginBack"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:clickable="true"
+                app:maxImageSize="35dp"
+                android:src="@drawable/baseline_arrow_back_24"
+                app:backgroundTint="#FEFAFD"
+                app:boxStrokeColor="@android:color/black"
+                app:elevation="0dp"
+                app:fabCustomSize="50dp"/>
+            
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="15dp"
+                android:text="EN QUE
+                    PARQUEADERO
+                    ESTAS?"
+                android:textColor="@android:color/black"
+                android:textSize="45sp"
+                android:fontFamily="@font/poppins_extrabold"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="5dp"
+                android:text="Estas asignado a varios"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                android:fontFamily="@font/poppins_regular"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="parqueaderos asi que debes informar"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                android:fontFamily="@font/poppins_regular"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="en que parqueadero estas."
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                android:fontFamily="@font/poppins_regular"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/background_rounded_especial_3"
+                android:clickable="true"
+                android:layout_marginTop="15dp"
+                android:padding="20dp"
+                android:elevation="18dp"
+                android:orientation="vertical"
+                >
+                
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Parqueadero Don Ramon"
+                    android:fontFamily="@font/poppins_bold"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    >
+                </TextView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Calle 27 Cr8 #25-45"
+                    android:fontFamily="@font/poppins_regular"
+                    android:textColor="@color/md_theme_light_onSurfaceVariant"
+                    android:textSize="20dp"
+                    >
+                </TextView>
+
+                
+                
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/background_rounded_especial_3"
+                android:clickable="true"
+                android:layout_marginTop="15dp"
+                android:padding="20dp"
+                android:elevation="18dp"
+                android:orientation="vertical"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Parqueadero Chuleta"
+                    android:fontFamily="@font/poppins_bold"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    >
+                </TextView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Calle 2 Cr17 #2-5"
+                    android:fontFamily="@font/poppins_regular"
+                    android:textColor="@color/md_theme_light_onSurfaceVariant"
+                    android:textSize="20dp"
+                    >
+                </TextView>
+
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+</LinearLayout>
