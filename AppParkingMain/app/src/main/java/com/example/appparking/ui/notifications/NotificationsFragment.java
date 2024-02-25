@@ -20,8 +20,7 @@ public class NotificationsFragment extends Fragment {
         binding = FragmentNotificationsBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.textNotifications;
-        textView.setText("This is the notifications fragment");
+
         return root;
     }
 

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="horizontal"
-    tools:context="com.example.appparking.com.example.parkingapp.Agergar_vendedor">
+    tools:context="Agergar_vendedor">
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -48,7 +48,7 @@
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="50dp"
+                    android:layout_marginTop="80dp"
                     android:hint="Documento"
                     app:boxBackgroundMode="outline"
                     app:boxCornerRadiusBottomEnd="5dp"
