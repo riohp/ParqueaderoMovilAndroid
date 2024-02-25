@@ -21,6 +21,15 @@
         <item name="cornerSize">5dp</item>
     </style>
 
+    <style name="SquaredOutlinedButton" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="shapeAppearance">@style/ShapeAppearance.MyApp.Squared</item>
+    </style>
+
+    <style name="ShapeAppearance.MyApp.Squared" parent="ShapeAppearance.MaterialComponents">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">0dp</item>
+    </style>
+
 
 
 </resources>

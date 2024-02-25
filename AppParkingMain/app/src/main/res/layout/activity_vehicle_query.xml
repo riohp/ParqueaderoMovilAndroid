@@ -87,7 +87,7 @@
                 android:layout_marginTop="50dp"
                 android:background="@android:color/black">
 
-                <Button
+                <androidx.constraintlayout.utils.widget.MotionButton
                     android:id="@+id/btnViewCar"
                     android:layout_width="394dp"
                     android:layout_height="64dp"

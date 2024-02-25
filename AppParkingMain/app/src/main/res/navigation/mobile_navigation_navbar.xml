@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/mobile_navigation_navbar"
+            app:startDestination="@+id/navigation_home_navbar">
+
+    <fragment
+        android:id="@+id/navigation_home_navbar"
+        android:name="com.example.appparking.navbar.ui.home.CasitaFragment"
+        android:label="Casita"
+        tools:layout="@layout/fragment_casita"
+    />
+
+    <fragment
+        android:id="@+id/navigation_dashboard_navbar"
+        android:name="com.example.appparking.navbar.ui.search_vehicle.SearchVehicleFragment"
+        android:label="Buscar"
+        tools:layout="@layout/fragment_search_vehicle"
+    />
+
+</navigation>
