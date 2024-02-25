@@ -55,7 +55,7 @@
             <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="60dp">
+                    android:layout_marginTop="50dp">
 
 
                 <EditText
@@ -63,6 +63,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@drawable/edit_text_style"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
                         android:gravity="center"
                         android:hint="LED - 06G"
                         android:inputType="text"
