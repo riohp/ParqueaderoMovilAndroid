@@ -15,9 +15,7 @@
         <activity
             android:name=".QueryParking.QueryParking"
             android:exported="false" />
-        <activity
-            android:name=".enablestatus.StatusCards"
-            android:exported="false" />
+
         <activity
             android:name=".authentication.Login"
             android:exported="false"
