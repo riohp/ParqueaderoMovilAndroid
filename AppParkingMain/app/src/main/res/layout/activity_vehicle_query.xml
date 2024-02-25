@@ -31,22 +31,15 @@
                 app:elevation="0dp"
                 app:fabCustomSize="48dp" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="60dp"
-                android:layout_marginLeft="0dp"
-                android:text="VER"
-                android:textColor="@android:color/black"
-                android:textSize="55sp"
-                android:fontFamily="@font/poppins_bold" />
 
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="67dp"
+                android:layout_height="wrap_content"
                 android:layout_marginLeft="0dp"
-                android:text="MI VEHICULO"
+                android:text="VER
+                MI VEHICULO"
                 android:textColor="@android:color/black"
-                android:textSize="55sp"
+                android:textSize="54dp"
                 android:fontFamily="@font/poppins_bold" />
 
             <TextView
