@@ -19,8 +19,6 @@ public class AssigmentFragment extends Fragment {
         binding = FragmentAssigmentBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.textAssigment;
-        textView.setText("Se logro xd");
         return root;
     }
 
