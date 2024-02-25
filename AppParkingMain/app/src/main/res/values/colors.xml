@@ -7,22 +7,17 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-
-
     <color name="green_dark">#062925</color>
     <color name="green_light">#3a9188</color>
     <color name="green_lighter">#b8e1dd</color>
     <color name="green_normal">#044a42</color>
-
-
     <color name="amarillo_dorado_intenso">#FFC306</color>
-
-
     <color name="seed">#6750A4</color>
     <color name="md_theme_light_primary">#6750A4</color>
     <color name="md_theme_light_yellow">#f4f1bb</color>
     <color name="md_theme_ligth_white">#F5F5FA</color>
     <color name="md_theme_ligth_gray">#a6abb8</color>
+    <color name="md_theme_ligth_gray_v2">#f5f5f5</color>
     <color name="md_theme_ligth_blue">#005f73</color>
     <color name="md_theme_light_onPrimary">#FFFFFF</color>
     <color name="md_theme_light_primaryContainer">#EADDFF</color>
@@ -39,7 +34,7 @@
     <color name="md_theme_light_onError">#FFFFFF</color>
     <color name="md_theme_light_errorContainer">#F9DEDC</color>
     <color name="md_theme_light_onErrorContainer">#410E0B</color>
-    <color name="md_theme_light_outline">#79747E</color>
+    <color name="md_theme_light_outline">#03A9F4</color>
     <color name="md_theme_light_background">#FFFBFE</color>
     <color name="md_theme_light_onBackground">#1C1B1F</color>
     <color name="md_theme_light_surface">#FFFBFE</color>
@@ -84,8 +79,5 @@
     <color name="md_theme_dark_surfaceTint">#D0BCFF</color>
     <color name="md_theme_dark_outlineVariant">#49454F</color>
     <color name="md_theme_dark_scrim">#000000</color>
-
-
-
 
 </resources>
