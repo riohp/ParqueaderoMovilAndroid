@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+            android:id="@+id/navigation_home_navbar"
+            android:icon="@drawable/icon_home"
+            android:title="Casita"/>
+
+    <item
+            android:id="@+id/navigation_dashboard_navbar"
+            android:icon="@drawable/icon_buscar"
+            android:title="Buscar"/>
+</menu>
