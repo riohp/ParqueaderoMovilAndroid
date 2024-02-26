@@ -84,14 +84,18 @@
                             String estado = datos.getString("estado");
                             //Extraer el id del usuario
                             String id = datos.getString("idusuario");
+                            //Extraer el documento del usuario
+                            String documento = datos.getString("identificacion");
+                            //Extare el nombre del usuario
+                            String nombre = datos.getString("nombreusuario");
 
                             if (estado.equals("activo")) {
 
                                 String rol = datos.getString("rol");
                                 if (rol.equals("administrador")) {
-                                    cambiarActivityAdmin(id);
+                                    cambiarActivityAdmin(id, documento, nombre);
                                 } else {
-                                    cambiarActivityVendedor(id);
+                                    cambiarActivityVendedor(id, documento, nombre);
                                 }
                             }else {
                                 Toast.makeText(getApplicationContext(),"Usuario inactivo",Toast.LENGTH_LONG).show();
@@ -127,10 +131,13 @@
     
         }
 
-        private void cambiarActivityAdmin(String id){
+        private void cambiarActivityAdmin(String id, String documento, String nombre){
             SharedPreferences archivo = getSharedPreferences( "app_parking", Context.MODE_PRIVATE);
             SharedPreferences.Editor editor = archivo.edit();
             editor.putString("id_usuario", id);
+            editor.putString("documento", documento);
+            editor.putString("nombre", nombre);
+
             editor.apply();
 
             Intent intencion = new Intent(getApplicationContext(), MainActivity.class );
@@ -138,10 +145,12 @@
             finish();
         }
 
-        private void cambiarActivityVendedor(String id){
+        private void cambiarActivityVendedor(String id, String documento, String nombre){
             SharedPreferences archivo = getSharedPreferences( "app_parking", Context.MODE_PRIVATE);
             SharedPreferences.Editor editor = archivo.edit();
             editor.putString("id_usuario", id);
+            editor.putString("documento", documento);
+            editor.putString("nombre", nombre);
             editor.apply();
 
             Intent intencion = new Intent(getApplicationContext(), navbar_main.class );

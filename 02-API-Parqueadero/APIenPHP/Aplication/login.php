@@ -13,16 +13,20 @@ if(!empty($_POST['user'])){
                                 'status' => true,
                                 'rol' => 'administrador',
                                 'estado' => 'activo',
+                                'identificacion' => $datos[0]['identificacion'],
                                 'idusuario' => $datos[0]['idusuario'],
+                                'nombreusuario' => $datos[0]['nombreusuario'],
                                 'mesagge' => "OK##DATOS##POST##CORRECTOS",
                                 '$_POST' => $_POST
                               ];
             }else if($datos[0]['rol'] == 'vendedor' && $datos[0]['estado'] == 'activo'){
-                $respuesta = [
+                        $respuesta = [
                                 'status' => true,
-                                'rol' => 'vendedor',
+                                'rol' => 'administrador',
                                 'estado' => 'activo',
+                                'identificacion' => $datos[0]['identificacion'],
                                 'idusuario' => $datos[0]['idusuario'],
+                                'nombreusuario' => $datos[0]['nombreusuario'],
                                 'mesagge' => "OK##DATOS##POST##CORRECTOS",
                                 '$_POST' => $_POST
                                 ];
