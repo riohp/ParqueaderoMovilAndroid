@@ -50,6 +50,7 @@
                     android:orientation="vertical"
                     android:gravity="center">
                     <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/etpcampoIdentificacion"
                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -71,6 +72,7 @@
 
                     <!-- nombre completo -->
                     <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/etpcampoNombre"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
@@ -93,6 +95,7 @@
                     <!-- correo -->
 
                     <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/etpcampoCorreo"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
@@ -114,27 +117,30 @@
 
                     <!-- rol para elejir cendedor o admin -->
                     <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/etpcampoRol"
+                        style="@style/ExposedDropdownMenuWhiteWithBorder"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        app:boxStrokeColor="@android:color/black"
                         android:hint="Rol"
-                        app:hintTextColor="@android:color/black"
-                        app:boxBackgroundMode="outline"
-                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_marginTop="8dp"
+                        app:boxCornerRadiusBottomEnd="5dp"
+                        app:boxCornerRadiusBottomStart="5dp"
                         app:boxCornerRadiusTopEnd="5dp"
                         app:boxCornerRadiusTopStart="5dp"
-                        app:boxCornerRadiusBottomEnd="5dp"
-                        app:boxCornerRadiusBottomStart="5dp">
+                        app:hintTextColor="@color/black"
+                        >
 
-                        <com.google.android.material.textfield.TextInputEditText
+                        <AutoCompleteTextView
+                            android:id="@+id/etpRol"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content" />
-
+                            android:layout_height="wrap_content"
+                            android:inputType="text"
+                             />
                     </com.google.android.material.textfield.TextInputLayout>
 
 
                     <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/etpcampoPassword"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
@@ -166,7 +172,7 @@
                         android:background="@android:color/black">
 
                         <Button
-                            android:id="@+id/btnViewCar"
+                            android:id="@+id/btnAgregarUsuario"
                             android:layout_width="321dp"
                             android:layout_height="64dp"
                             android:layout_gravity="center"
