@@ -5,12 +5,12 @@
 
     include '../../Conexion.php';
 
-    if (!empty($_GET['documento'])) {
+    if (!empty($_POST['documento'])) {
 	    $consulta = $base_de_datos->query("SELECT usere.idusuario, usere.nombreusuario AS NombreVendedor, p.nombreparqueadero AS NombreParqueadero
                                             FROM usuarios usere
                                             INNER JOIN asignacionvendedorparqueadero avp ON usere.idusuario = avp.idusuario
                                             INNER JOIN parqueaderos p ON avp.idparqueadero = p.idparqueadero
-                                            WHERE usere.identificacion = ".$_GET['documento']);
+                                            WHERE usere.identificacion = ".$_POST['documento']);
 	    $datos = $consulta->fetchAll();
         if(sizeof($datos)>0){
             $respuesta = [
@@ -25,12 +25,12 @@
                 'data' => $datos
             ];
         }
-	}else if(!empty($_GET['user'])){
+	}else if(!empty($_POST['user'])){
         $consulta = $base_de_datos->query("SELECT usere.idusuario, p.idparqueadero AS idpark, usere.nombreusuario AS NombreVendedor, p.nombreparqueadero AS NombreParqueadero
                                             FROM usuarios usere
                                             INNER JOIN asignacionvendedorparqueadero avp ON usere.idusuario = avp.idusuario
                                             INNER JOIN parqueaderos p ON avp.idparqueadero = p.idparqueadero
-                                            WHERE usere.correoelectronico = '".$_GET['user']."'");
+                                            WHERE usere.correoelectronico = '".$_POST['user']."'");
         $datos = $consulta->fetchAll();
         if(sizeof($datos)>0){
             $respuesta = [
@@ -49,7 +49,7 @@
         $respuesta = [
                         'status' => false,
                         'mesagge' => "ERROR##DATOS##GET",
-                        '$_GET' => $_GET,
+                        '$_POST' => $_POST,
                       ];
     }
 
