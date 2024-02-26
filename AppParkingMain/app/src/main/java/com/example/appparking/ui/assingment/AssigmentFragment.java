@@ -106,6 +106,7 @@ public class AssigmentFragment extends Fragment {
                                 JSONObject vendedorObject = vendedores.getJSONObject(i);
                                 String idVendedor = vendedorObject.getString("idusuario");
                                 String vendedor = vendedorObject.getString("nombreusuario");
+                                System.out.println("aqui tiktala "+vendedor);
 
                                 // Almacenar el ID y el nombre del vendedor
                                 vendedoresList.add(vendedor);
@@ -149,7 +150,7 @@ public class AssigmentFragment extends Fragment {
 
         RequestQueue queue = Volley.newRequestQueue(requireContext());
         String url = dataConfig.getEndPoint("/Usuarios/asigno.php");
-        System.out.println("URL asigno: " + url);
+        System.out.println("URL asigno alooo: " + url);
 
         StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
                 new Response.Listener<String>() {
