@@ -136,20 +136,17 @@ public class HomeFragment extends Fragment {
     public void extraerHora(String horaEntradaCompleta) {
         String horaEntrada = horaEntradaCompleta.substring(11, 16);
 
+        System.out.println("ESRTA ES LA HORA QUE CAPTURE");
+        System.out.println(horaEntrada);
+
         etqIdTicket.setText(horaEntrada);
 
         int horas = Integer.parseInt(horaEntrada.substring(0, 2));
 
         boolean esPM = horas >= 12;
 
-        if (esPM) {
-            horaEntrada += " PM";
-        } else {
-            horaEntrada += " AM";
-        }
-
-        etqFomaterHorario.setText(horaEntrada);
-
+        String formato = (esPM)? " PM" : " AM";
+        etqFomaterHorario.setText(formato);
     }
 
     public void extraerEstado(String estado) {

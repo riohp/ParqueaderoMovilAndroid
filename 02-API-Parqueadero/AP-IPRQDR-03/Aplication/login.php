@@ -22,7 +22,7 @@ if(!empty($_POST['user'])){
             }else if($datos[0]['rol'] == 'vendedor' && $datos[0]['estado'] == 'activo'){
                         $respuesta = [
                                 'status' => true,
-                                'rol' => 'administrador',
+                                'rol' => 'vendedor',
                                 'estado' => 'activo',
                                 'identificacion' => $datos[0]['identificacion'],
                                 'idusuario' => $datos[0]['idusuario'],
