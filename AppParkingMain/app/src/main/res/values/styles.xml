@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="ExposedDropdownMenuWhiteWithBorder" parent="Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu">
+        <!-- Color de fondo blanco -->
+        <item name="boxBackgroundColor">@android:color/white</item>
+        <!-- Color del borde negro -->
+        <item name="boxStrokeColor">@android:color/black</item>
+        <!-- Grosor del borde -->
+        <item name="boxStrokeWidth">2dp</item>
+        <!-- Especifica el estilo del contorno del cuadro para que el borde sea visible -->
+        <item name="shapeAppearanceOverlay">@style/ShapeAppearanceOverlay.MyApp.TextInputLayout.Box</item>
+    </style>
+
+    <style name="ShapeAppearanceOverlay.MyApp.TextInputLayout.Box" parent="">
+        <!-- Especifica el grosor del borde en todo el contorno del TextInputLayout -->
+        <item name="strokeWidth">2dp</item>
+        <!-- Establece el color del borde -->
+        <item name="strokeColor">@android:color/black</item>
+        <!-- Especifica el radio de la esquina para mantener las esquinas redondeadas -->
+        <item name="cornerSize">5dp</item>
+    </style>
+
+    <style name="SquaredOutlinedButton" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="shapeAppearance">@style/ShapeAppearance.MyApp.Squared</item>
+    </style>
+
+    <style name="ShapeAppearance.MyApp.Squared" parent="ShapeAppearance.MaterialComponents">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">0dp</item>
+    </style>
+
+
+
+</resources>

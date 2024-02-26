@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".vehiclequery.VehicleQueryActivity">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="25dp">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/btnRegrasarVista"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:clickable="true"
+                android:src="@drawable/baseline_arrow_back_24"
+                app:backgroundTint="#FEFAFD"
+                app:maxImageSize="30dp"
+                app:boxStrokeColor="@android:color/black"
+                app:elevation="0dp"
+                app:fabCustomSize="48dp" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:text="VER
+                MI VEHICULO"
+                android:textColor="@android:color/black"
+                android:textSize="54dp"
+                android:fontFamily="@font/poppins_bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:text="Ingresa su número de  placa en el siguiente recuadro para saber la información actual de su vehículo."
+                android:textColor="#545454"
+                android:textSize="14sp"
+                android:fontFamily="@font/poppins_regular"/>
+
+
+            <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="50dp">
+
+
+                <EditText
+                        android:id="@+id/etpPlaca"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/edit_text_style"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
+                        android:gravity="center"
+                        android:hint="LED - 06G"
+                        android:inputType="text"
+                        android:textColor="@android:color/black"
+                        android:textSize="65dp"
+                        android:textStyle="bold" />
+
+                <!-- View para representar el borde negro -->
+                <View
+                        android:layout_width="match_parent"
+                        android:layout_height="10dp"
+                        android:background="@drawable/bottom_corner_border"
+                        android:layout_below="@id/etpPlaca" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:background="@android:color/black">
+
+                <androidx.constraintlayout.utils.widget.MotionButton
+                    android:id="@+id/btnViewCar"
+                    android:layout_width="394dp"
+                    android:layout_height="64dp"
+                    android:textAlignment="center"
+                    android:backgroundTint="@android:color/black"
+                    android:text="Consultar Vehiculo"
+                    android:textColor="@android:color/white"
+                    android:textSize="18dp"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/poppins_bold"
+                    android:layout_weight="1"/>
+
+            </LinearLayout>
+        </LinearLayout>
+    </FrameLayout>
+</LinearLayout>
