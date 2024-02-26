@@ -55,6 +55,7 @@ public class VehicleQueryActivity extends AppCompatActivity {
                 if (etpPlaca.getText().toString().isEmpty()) {
                     etpPlaca.setError("Por favor, rellene el campo");
                     Toast.makeText(VehicleQueryActivity.this, "Por favor, rellene el campo", Toast.LENGTH_SHORT).show();
+                    btnViewCar.setEnabled(true);
                 } else {
                     consultarVehiculo(placa);
                 }
@@ -96,7 +97,9 @@ public class VehicleQueryActivity extends AppCompatActivity {
                     } else {
                         System.out.println("No se encontró el campo 'data' en la respuesta");
                         Toast.makeText(VehicleQueryActivity.this, message, Toast.LENGTH_LONG).show();
+
                     }
+                    btnViewCar.setEnabled(true);
                 } catch (JSONException e) {
                     throw new RuntimeException(e);
                 }
