@@ -13,6 +13,7 @@ if(!empty($_POST['user'])){
                                 'status' => true,
                                 'rol' => 'administrador',
                                 'estado' => 'activo',
+                                'idusuario' => $datos[0]['idusuario'],
                                 'mesagge' => "OK##DATOS##POST##CORRECTOS",
                                 '$_POST' => $_POST
                               ];
@@ -20,6 +21,8 @@ if(!empty($_POST['user'])){
                 $respuesta = [
                                 'status' => true,
                                 'rol' => 'vendedor',
+                                'estado' => 'activo',
+                                'idusuario' => $datos[0]['idusuario'],
                                 'mesagge' => "OK##DATOS##POST##CORRECTOS",
                                 '$_POST' => $_POST
                                 ];
