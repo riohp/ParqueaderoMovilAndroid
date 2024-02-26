@@ -224,7 +224,7 @@
                                 android:textColor="@color/md_theme_dark_blue"
                                 android:fontFamily="@font/poppins_medium"
                                 android:textAlignment="textStart"
-                                android:textSize="18dp"
+                                android:textSize="14dp"
                                 android:layout_marginLeft="15dp"
                         />
                     </LinearLayout>
@@ -334,14 +334,15 @@
                             android:textSize="15dp"/>
 
                     <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Є682.5"
-                            android:layout_gravity="center"
-                            android:textColor="@color/black"
-                            android:fontFamily="@font/poppins_bold"
-                            android:textSize="20dp"
-                            android:layout_marginTop="4dp"/>
+                        android:id="@+id/etqGnanciasAprox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Є682.5"
+                        android:layout_gravity="center"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/poppins_bold"
+                        android:textSize="20dp"
+                        android:layout_marginTop="4dp"/>
 
                     <LinearLayout
                             android:layout_width="match_parent"
@@ -352,14 +353,15 @@
                             android:layout_marginLeft="128dp">
 
                         <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:layout_marginTop="4dp"
-                                android:fontFamily="@font/poppins_bold"
-                                android:text="+2.45%"
-                                android:textColor="@color/white"
-                                android:textSize="15dp"/>
+                            android:id="@+id/etqGnanciasPorc"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="4dp"
+                            android:fontFamily="@font/poppins_bold"
+                            android:text="+2.45%"
+                            android:textColor="@color/white"
+                            android:textSize="15dp"/>
 
                     </LinearLayout>
 
