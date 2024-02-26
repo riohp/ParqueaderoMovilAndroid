@@ -15,7 +15,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="vertical">
 
 
@@ -26,7 +26,7 @@
                 android:clickable="true"
                 app:maxImageSize="35dp"
                 android:src="@drawable/baseline_arrow_back_24"
-                app:backgroundTint="#FEFAFD"
+                app:backgroundTint="#F4F4F4"
                 app:boxStrokeColor="@android:color/black"
                 app:elevation="0dp"
                 app:fabCustomSize="50dp"/>
@@ -49,25 +49,25 @@
                 android:layout_marginLeft="0dp"
                 android:layout_marginTop="5dp"
                 android:text="Estas asignado a varios"
-                android:textColor="@android:color/black"
+                android:textColor="#303030"
                 android:textSize="18sp"
-                android:fontFamily="@font/poppins_regular"/>
+                android:fontFamily="@font/poppins_medium"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="parqueaderos asi que debes informar"
-                android:textColor="@android:color/black"
+                android:textColor="#303030"
                 android:textSize="18sp"
-                android:fontFamily="@font/poppins_regular"/>
+                android:fontFamily="@font/poppins_medium"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="en que parqueadero estas."
-                android:textColor="@android:color/black"
+                android:textColor="#303030"
                 android:textSize="18sp"
-                android:fontFamily="@font/poppins_regular"/>
+                android:fontFamily="@font/poppins_medium"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -76,7 +76,7 @@
                 android:clickable="true"
                 android:layout_marginTop="15dp"
                 android:padding="20dp"
-                android:elevation="18dp"
+                android:elevation="2dp"
                 android:orientation="vertical"
                 >
                 
@@ -111,7 +111,7 @@
                 android:clickable="true"
                 android:layout_marginTop="15dp"
                 android:padding="20dp"
-                android:elevation="18dp"
+                android:elevation="2dp"
                 android:orientation="vertical"
                 >
 
