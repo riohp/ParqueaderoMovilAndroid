@@ -1,6 +1,6 @@
 
-CREATE DATABASE parqueadero_deec;
-USE parqueadero_deec;
+CREATE DATABASE prqdr_db_02;
+USE prqdr_db_02;
 
 CREATE TABLE parqueaderos (
     idparqueadero INT PRIMARY KEY AUTO_INCREMENT,
