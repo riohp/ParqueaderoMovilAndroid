@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:backgroundTint="#FCF3EC"
     app:cardCornerRadius="20dp"
     android:layout_margin="10dp">
 
@@ -33,33 +34,41 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Placa:"
-                        android:textSize="23dp"
+                        android:layout_weight="1"
+                        android:textSize="20dp"
+                        android:autoSizeTextType="uniform"
                         android:fontFamily="@font/poppins_medium"/>
 
                     <TextView
                         android:id="@+id/etqPlaca"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text=""
-                        android:textSize="23dp"
-                        android:paddingHorizontal="50dp"
+                        android:layout_weight="1"
+                        android:text="ABC123"
+                        android:textSize="20dp"
+                        android:paddingHorizontal="0dp"
                         android:layout_marginRight="10dp"
-                        android:textStyle="bold"/>
+                        android:autoSizeTextType="uniform"
+                       android:fontFamily="@font/poppins_bold"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Tipo:"
-                        android:textSize="23dp"
+                        android:layout_weight="1"
+                        android:textSize="20dp"
+                        android:autoSizeTextType="uniform"
                         android:fontFamily="@font/poppins_medium"/>
 
                     <TextView
                         android:id="@+id/etpTipo"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text=""
-                        android:textSize="23dp"
-                        android:paddingHorizontal="50dp"
-                        android:textStyle="bold"/>
+                        android:layout_weight="1"
+                        android:text="N/A"
+                        android:textSize="20dp"
+                        android:paddingHorizontal="0dp"
+                        android:autoSizeTextType="uniform"
+                        android:fontFamily="@font/poppins_bold"/>
                 </LinearLayout>
 
 
@@ -72,34 +81,40 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_weight="1"
                         android:text="Marca:"
-                        android:textSize="23dp"
+                        android:textSize="20dp"
+                        android:autoSizeTextType="uniform"
                         android:fontFamily="@font/poppins_medium"/>
 
                     <TextView
                         android:id="@+id/etpMarca"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text=""
-                        android:textSize="23dp"
-                        android:paddingHorizontal="50dp"
+                        android:layout_weight="1"
+                        android:text="Yamaha"
+                        android:textSize="20dp"
                         android:layout_marginRight="10dp"
-                        android:textStyle="bold"/>
+                        android:autoSizeTextType="uniform"
+                        android:fontFamily="@font/poppins_bold"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_weight="1"
                         android:text="Modelo:"
-                        android:textSize="23dp"
+                        android:textSize="20dp"
+                        android:autoSizeTextType="uniform"
                         android:fontFamily="@font/poppins_medium"/>
 
                     <TextView
                         android:id="@+id/etpModelo"
+                        android:layout_weight="1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text=""
-                        android:textSize="23dp"
-                        android:paddingHorizontal="50dp"
-                        android:textStyle="bold"/>
+                        android:text="2023"
+                        android:textSize="20dp"
+                        android:autoSizeTextType="uniform"
+                        android:fontFamily="@font/poppins_bold"/>
                 </LinearLayout>
 
 
