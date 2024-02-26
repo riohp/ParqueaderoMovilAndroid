@@ -31,8 +31,6 @@ public class DashboardFragment extends Fragment {
 
 
         View root = inflater.inflate(R.layout.fragment_dashboard, container, false);
-
-
         recyclerUsarios = root.findViewById(R.id.recyclerUsarios);
 
         List<Usuario> listaUsuarios = new ArrayList<>();
