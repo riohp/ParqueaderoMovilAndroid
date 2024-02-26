@@ -185,7 +185,7 @@ public class AssigmentFragment extends Fragment {
                 return params;
             }
         };
-        
+
         queue.add(stringRequest);
     }
 
