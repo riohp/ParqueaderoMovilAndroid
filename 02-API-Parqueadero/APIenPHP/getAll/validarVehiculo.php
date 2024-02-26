@@ -24,9 +24,9 @@ if (isset($_GET['placa']) && !empty($_GET['placa'])) {
     if (!empty($datos)) {
         if ($datos['estado_ticket'] === 'activo') {
             $respuesta = [
-                'status' => false,
-                'ingreso' => false,
+                'status' => true,
                 'message' => "El vehículo está dentro del parking",
+                'data' => $datos,
             ];
         } else {
             $respuesta = [
@@ -38,7 +38,6 @@ if (isset($_GET['placa']) && !empty($_GET['placa'])) {
     } else {
         $respuesta = [
             'status' => false,
-            'ingreso' => true,
             'message' => "ERROR PLACA NO REGISTRADA",
         ];
     }

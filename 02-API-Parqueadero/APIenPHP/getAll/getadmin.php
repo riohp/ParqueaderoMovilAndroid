@@ -4,7 +4,7 @@
     header("Access-Control-Allow-Headers: Content-Type");
 
     include './../Conexion.php';
-    //SUMIR UNA API DENTRO DE OTRA API UNA BENDICION
+
     $consultarVehiculosAyerURL = "http://localhost/APIenPHP/getAll/obtenerAll.php";
     $respuesta_vehiculos_ayer = file_get_contents($consultarVehiculosAyerURL);
 
@@ -20,9 +20,9 @@
         t.estado AS Estado,
         t.horasalida AS HoraSalida,
         t.costototal AS TotalPago
-        FROM parqueaderos p
-        LEFT JOIN tickets t ON p.idparqueadero = t.idparqueadero
-        LEFT JOIN registrarvehiculos r ON t.idvehiculo = r.idvehiculo");
+    FROM parqueaderos p
+    LEFT JOIN tickets t ON p.idparqueadero = t.idparqueadero
+    LEFT JOIN registrarvehiculos r ON t.idvehiculo = r.idvehiculo");
 
 if ($consulta) {
     $datos = $consulta->fetchAll();
@@ -32,7 +32,7 @@ if ($consulta) {
             'status' => true,
             'message' => "OK##DATOS##GET",
             'data' => $datos,
-            'vehiculos_ayer' => $datos_vehiculos_ayer['vehiculos_ayer']  
+            'vehiculos_ayer' => $datos_vehiculos_ayer['vehiculos_ayer']  // Agrega el número de vehículos de ayer
         ];
     } else {
         $respuesta = [
