@@ -27,7 +27,7 @@
                 android:paddingLeft="20dp"
                 android:paddingRight="20dp"
                 android:paddingBottom="0dp"
-                android:gravity="">
+            >
 
                 <com.google.android.material.floatingactionbutton.FloatingActionButton
                     android:layout_width="40dp"
@@ -92,7 +92,7 @@
                     android:layout_marginTop="4dp"
                     android:layout_marginBottom="8dp"
                     android:padding="20dp"
-                    android:elevation="8dp">
+                    android:elevation="3dp">
 
                     <TextView
                         android:layout_width="match_parent"
@@ -131,51 +131,48 @@
                         android:orientation="horizontal"
                         android:layout_marginTop="5dp"
                         android:layout_gravity="center"
-                        android:padding="10dp"
-                        android:background="@drawable/background_border"
-                        android:clickable="true"
                         >
 
-                        <TextView
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnAsignar"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_height="48dp"
+                            android:background="@null"
+                            style="@style/SquaredOutlinedButton"
                             android:text="CAMBIAR PARQUEADERO"
-                            android:fontFamily="@font/poppins_bold"
-                            android:textSize="18dp"
+                            app:strokeColor="@color/black"
+                            app:strokeWidth="2dp"
                             android:textColor="@color/black"
-                            >
-                        </TextView>
-
-                        <ImageView
-                            android:layout_width="35dp"
-                            android:layout_height="30dp"
-                            android:src="@drawable/icon_home_vendedor"
-                            >
-
-                        </ImageView>
+                            android:textSize="13sp"
+                            android:paddingTop="5dp"
+                            android:fontFamily="@font/poppins_bold"
+                            android:autoSizeTextType="uniform"
+                            app:icon="@drawable/switch_parking"
+                            app:iconGravity="end"
+                    />
                     </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/backgroud_rounded_especial_7"
+                android:layout_height="80dp"
                 android:layout_marginTop="60dp"
                 android:layout_marginLeft="40dp"
                 android:layout_marginRight="40dp"
                 android:layout_gravity="center"
-                android:elevation="8dp"
                 >
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btnVehiculos"
                     android:layout_width="match_parent"
                     android:layout_height="80dp"
+                    app:backgroundTint="@color/md_theme_light_yellow"
                     style="@style/SquaredOutlinedButton"
                     android:text="Ver lista de vehiculos"
                     android:textColor="@color/black"
                     android:textSize="13sp"
+                    android:elevation="3dp"
                     android:fontFamily="@font/poppins_semibold"
                     />
 
