@@ -46,6 +46,14 @@ public class AdaptadorDeItemsUsuarios extends RecyclerView.Adapter<AdaptadorDeIt
         return listaUsuarios.size();
     }
 
+    public void actualizarUsuarios(List<Usuario> listaUsuarios) {
+
+        this.listaUsuarios = listaUsuarios;
+        notifyDataSetChanged();
+
+
+    }
+
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         TextView etqIdentificacion;
