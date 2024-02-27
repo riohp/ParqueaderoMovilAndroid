@@ -5,7 +5,7 @@ header("Access-Control-Allow-Headers: Content-Type");
 
 include '../Conexion.php';
 
-$consultarParkingsURL = "http://localhost/AP-IPRQDR-03/Parqueaderos/Obtener_P.php";
+$consultarParkingsURL = "http://localhost/APIenPHP/Parqueaderos/Obtener_P.php";
 $respuesta_parkings = file_get_contents($consultarParkingsURL);
 $datos_parkings = json_decode($respuesta_parkings, true);
 

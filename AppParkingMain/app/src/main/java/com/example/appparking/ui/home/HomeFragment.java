@@ -40,6 +40,8 @@ public class HomeFragment extends Fragment {
     TextView etqTipoVehiculo;
     TextView etqFechaIngreso;
     TextView etqName;
+    TextView etqGnanciasAprox;
+    TextView etqGnanciasPorc;
 
 
     private FragmentHomeBinding binding;
@@ -58,6 +60,8 @@ public class HomeFragment extends Fragment {
         etqTipoVehiculo = root.findViewById(R.id.etqTipoVehiculo);
         etqFechaIngreso = root.findViewById(R.id.etqFechaIngreso);
         etqName = root.findViewById(R.id.etqName);
+        etqGnanciasAprox = root.findViewById(R.id.etqGnanciasAprox);
+        etqGnanciasPorc = root.findViewById(R.id.etqGnanciasPorc);
 
         SharedPreferences sharedPreferences = requireContext().getSharedPreferences("app_parking", Context.MODE_PRIVATE);
         String documento = sharedPreferences.getString("documento", "");
@@ -66,6 +70,7 @@ public class HomeFragment extends Fragment {
         etqName.setText(nombre);
 
         cambiarContenido(documento);
+        cambiarContenido2();
 
         return root;
     }
@@ -136,20 +141,17 @@ public class HomeFragment extends Fragment {
     public void extraerHora(String horaEntradaCompleta) {
         String horaEntrada = horaEntradaCompleta.substring(11, 16);
 
+        System.out.println("ESRTA ES LA HORA QUE CAPTURE");
+        System.out.println(horaEntrada);
+
         etqIdTicket.setText(horaEntrada);
 
         int horas = Integer.parseInt(horaEntrada.substring(0, 2));
 
         boolean esPM = horas >= 12;
 
-        if (esPM) {
-            horaEntrada += " PM";
-        } else {
-            horaEntrada += " AM";
-        }
-
-        etqFomaterHorario.setText(horaEntrada);
-
+        String formato = (esPM)? " PM" : " AM";
+        etqFomaterHorario.setText(formato);
     }
 
     public void extraerEstado(String estado) {
@@ -209,6 +211,76 @@ public class HomeFragment extends Fragment {
     public void extraerFecha(String horaEntradaCompleta) {
         String fecha = horaEntradaCompleta.substring(0, 10);
         etqFechaIngreso.setText(fecha);
+    }
+
+    public void cambiarContenido2(){
+        int montoAproxoximado = 150000;
+
+        etqGnanciasAprox.setText(String.valueOf(montoAproxoximado));
+
+        RequestQueue queue = Volley.newRequestQueue(requireContext());
+        String url = dataConfig.getEndPoint("/Tikets/Obtener_P.php");
+
+        StringRequest solicitud =  new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
+
+            @Override
+            public void onResponse(String response) {
+                System.out.println("El servidor GET TTOSL responde con:");
+                System.out.println(response);
+                try {
+                    JSONObject datos = new JSONObject(response);
+
+                    boolean status = datos.getBoolean("status");
+                    if (status) {
+
+
+                        String costo_recaudado = datos.getString("total_costo");
+
+                        double total_costo_double = Double.parseDouble(costo_recaudado);
+                        double diferencia = montoAproxoximado - total_costo_double;
+                        double porcentaje;
+
+                        if (diferencia > 0) {
+                            porcentaje = (diferencia / montoAproxoximado) * 100;
+                            System.out.println("Porcentaje de pérdida: " + porcentaje + "%");
+                            String numeroRedondeado = String.format("%.2f", porcentaje);
+                            etqGnanciasPorc.setText("-"+numeroRedondeado+"%");
+
+                        } else if (diferencia < 0) {
+                            diferencia = Math.abs(diferencia);
+                            porcentaje = (diferencia / montoAproxoximado) * 100;
+                            System.out.println("Porcentaje de ganancia adicional: " + porcentaje + "%");
+                            String numeroRedondeado = String.format("%.2f", porcentaje);
+                            etqGnanciasPorc.setText("+"+numeroRedondeado+"%");
+                        } else {
+                           etqGnanciasPorc.setText("0%");
+                        }
+
+
+
+
+                    } else {
+                        String errorMessage = datos.getString("message");
+                        System.out.println("Error: " + errorMessage);
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                System.out.println("El servidor GET responde con un error:");
+                System.out.println(error.getMessage());
+            }
+
+        });
+
+        queue.add(solicitud);
+
+
+
+
     }
 
 }
