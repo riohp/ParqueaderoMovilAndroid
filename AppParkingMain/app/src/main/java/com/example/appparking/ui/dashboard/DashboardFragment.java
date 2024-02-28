@@ -95,12 +95,8 @@ public class DashboardFragment extends Fragment {
                 String estado = usuarioObject.getString("estado");
                 String rol = usuarioObject.getString("rol");
 
-                if (estado.equals("1")) {
-                    estado = "Activo";
+                System.out.println("-------AASDASDASDestado: " + estado);
 
-                } else {
-                    estado = "Inactivo";
-                }
                 Usuario usuario = new Usuario(identificacion, nombreUsuario, correoElectronico, estado, rol);
                 listaUsuarios.add(usuario);
             }
