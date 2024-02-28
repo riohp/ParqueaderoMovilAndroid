@@ -115,7 +115,7 @@
 
                     </com.google.android.material.textfield.TextInputLayout>
 
-                    <!-- rol para elejir cendedor o admin -->
+                    <!-- rol para elejir vendedor o admin -->
                     <com.google.android.material.textfield.TextInputLayout
                         android:id="@+id/etpcampoRol"
                         style="@style/ExposedDropdownMenuWhiteWithBorder"
@@ -135,7 +135,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:inputType="text"
-                             />
+                            android:textSize="20sp"
+                            />
                     </com.google.android.material.textfield.TextInputLayout>
 
 
