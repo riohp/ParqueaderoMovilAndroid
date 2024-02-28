@@ -74,12 +74,23 @@
 
                 <!-- View para representar el borde negro -->
                 <View
+                        android:id="@+id/viweColorError"
                         android:layout_width="match_parent"
                         android:layout_height="10dp"
                         android:background="@drawable/bottom_corner_border"
                         android:layout_below="@id/etpPlaca" />
-
             </RelativeLayout>
+
+            <TextView
+                    android:id="@+id/txtFieldError"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:text="Error esta incorrecta su viana"
+                    android:textColor="#d92a2a"
+                    android:textSize="14dp"
+                    android:fontFamily="@font/poppins_bold"
+            />
 
             <LinearLayout
                 android:layout_width="match_parent"

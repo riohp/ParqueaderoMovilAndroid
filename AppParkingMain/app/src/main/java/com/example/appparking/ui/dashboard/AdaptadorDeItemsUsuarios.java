@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.appparking.R;
@@ -46,6 +47,14 @@ public class AdaptadorDeItemsUsuarios extends RecyclerView.Adapter<AdaptadorDeIt
         return listaUsuarios.size();
     }
 
+    public void actualizarUsuarios(List<Usuario> listaUsuarios) {
+
+        this.listaUsuarios = listaUsuarios;
+        notifyDataSetChanged();
+
+
+    }
+
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         TextView etqIdentificacion;
@@ -53,7 +62,7 @@ public class AdaptadorDeItemsUsuarios extends RecyclerView.Adapter<AdaptadorDeIt
         TextView etpEmail;
 
         View etpEstado;
-
+         CardView cardViewUser;
         TextView etqRol;
 
         public ViewHolder(@NonNull View itemView) {
@@ -63,6 +72,7 @@ public class AdaptadorDeItemsUsuarios extends RecyclerView.Adapter<AdaptadorDeIt
             etpEmail = itemView.findViewById(R.id.etqEmail);
             etpEstado = itemView.findViewById(R.id.etpEstado);
             etqRol = itemView.findViewById(R.id.etqRol);
+            cardViewUser = itemView.findViewById(R.id.cardViewUser);
         }
 
         public void cargarDatos(Usuario persona) {
@@ -70,8 +80,8 @@ public class AdaptadorDeItemsUsuarios extends RecyclerView.Adapter<AdaptadorDeIt
             etpEmail.setText(persona.getEmail());
             etqIdentificacion.setText(persona.getIdentificacion());
             etqRol.setText(persona.getRol());
-
-            if (persona.getEstado().equals("ACTIVO")) {
+            if (persona.getEstado().equals("activo")) {
+                cardViewUser.setCardBackgroundColor(Color.parseColor("#F0FEE4"));
                 etpEstado.setBackgroundColor(Color.GREEN);
             } else {
                 etpEstado.setBackgroundColor(Color.RED);
