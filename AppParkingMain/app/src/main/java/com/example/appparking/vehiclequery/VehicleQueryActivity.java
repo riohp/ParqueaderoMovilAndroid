@@ -1,7 +1,9 @@
 package com.example.appparking.vehiclequery;
 
 import android.app.Dialog;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
@@ -34,6 +36,10 @@ public class VehicleQueryActivity extends AppCompatActivity {
     Button btnViewCar;
     EditText etpPlaca;
 
+    TextView txtFieldError;
+
+    View viweColorError;
+
     Config dataConfig;
 
 
@@ -44,19 +50,29 @@ public class VehicleQueryActivity extends AppCompatActivity {
         setContentView(R.layout.activity_vehicle_query);
         btnViewCar = findViewById(R.id.btnViewCar);
         etpPlaca = findViewById(R.id.etpPlaca);
+        txtFieldError = findViewById(R.id.txtFieldError);
+        viweColorError = findViewById(R.id.viweColorError);
         dataConfig = new Config(getApplicationContext());
+        txtFieldError.setText("");
+        Drawable drawable_error = getResources().getDrawable(R.drawable.bottom_corner_border_error);
+        Drawable drawable = getResources().getDrawable(R.drawable.bottom_corner_border);
+
         btnViewCar.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
+                txtFieldError.setText("");
                 btnViewCar.setEnabled(false);
                 String placa = etpPlaca.getText().toString();
                 System.out.println("placa "+placa);
                 if (etpPlaca.getText().toString().isEmpty()) {
-                    etpPlaca.setError("Por favor, rellene el campo");
-                    Toast.makeText(VehicleQueryActivity.this, "Por favor, rellene el campo", Toast.LENGTH_SHORT).show();
+                    viweColorError.setBackground(drawable_error);
+                    //etpPlaca.setError("Por favor, rellene el campo");
+                    txtFieldError.setText("Por favor, Ingrese la placa del vehículo");
+                    //Toast.makeText(VehicleQueryActivity.this, "Por favor, rellene el campo", Toast.LENGTH_SHORT).show();
                     btnViewCar.setEnabled(true);
                 } else {
+                    viweColorError.setBackground(drawable);
                     consultarVehiculo(placa);
                 }
             }
@@ -87,16 +103,17 @@ public class VehicleQueryActivity extends AppCompatActivity {
 
                             if (estadoTicket.equals("activo")) {
                                 consultarEstadoVehiculo(placa);
-
                             } else {
-                                Toast.makeText(VehicleQueryActivity.this, "El vehículo no esta, ASUSTESE MANO LO ROBARON", Toast.LENGTH_LONG).show();
+                                txtFieldError.setText("El vehículo no esta en el parqueadero");
+                                //Toast.makeText(VehicleQueryActivity.this, "El vehículo no esta, ASUSTESE MANO LO ROBARON", Toast.LENGTH_LONG).show();
                             }
                         } else {
                             System.out.println("No se encontró el campo 'estado_ticket' en el objeto 'data'");
                         }
                     } else {
                         System.out.println("No se encontró el campo 'data' en la respuesta");
-                        Toast.makeText(VehicleQueryActivity.this, message, Toast.LENGTH_LONG).show();
+                        txtFieldError.setText(message);
+                        //Toast.makeText(VehicleQueryActivity.this, message, Toast.LENGTH_LONG).show();
 
                     }
                     btnViewCar.setEnabled(true);
