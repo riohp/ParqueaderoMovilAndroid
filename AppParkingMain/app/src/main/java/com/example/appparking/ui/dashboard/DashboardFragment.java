@@ -33,7 +33,6 @@ import java.util.List;
 public class DashboardFragment extends Fragment {
 
     EditText campoBusqueda;
-
     RecyclerView recyclerUsarios;
     AdaptadorDeItemsUsuarios adaptador;
 
