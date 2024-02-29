@@ -1,6 +1,7 @@
 package com.example.appparking.ui.notifications;
 
 import android.os.Bundle;
+import android.text.InputType;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -49,8 +50,8 @@ public class NotificationsFragment extends Fragment {
         campoRol = root.findViewById(R.id.etpcampoRol);
         campoPassword = root.findViewById(R.id.etpcampoPassword);
         btnAgregarUsuario = root.findViewById(R.id.btnAgregarUsuario);
-
-
+        //solo numeros
+        campoIdentificacion.getEditText().setInputType(InputType.TYPE_CLASS_NUMBER);
 
         autoCompleteTextView = root.findViewById(R.id.etpRol);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(requireContext(), R.array.opciones_roles, android.R.layout.simple_dropdown_item_1line);
@@ -64,6 +65,7 @@ public class NotificationsFragment extends Fragment {
                 String correo = campoCorreo.getEditText().getText().toString();
                 String rol = campoRol.getEditText().getText().toString();
                 String contrasena = campoPassword.getEditText().getText().toString();
+
 
                 if (TextUtils.isEmpty(identificacion) || TextUtils.isEmpty(nombre) || TextUtils.isEmpty(correo) || TextUtils.isEmpty(rol) || TextUtils.isEmpty(contrasena)) {
                     Toast.makeText(getActivity(), "Por favor, complete todos los campos", Toast.LENGTH_SHORT).show();
@@ -113,6 +115,7 @@ public class NotificationsFragment extends Fragment {
         StringRequest solicitud = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
+                limpiarCampos();
                 Toast.makeText(getActivity(), "Usuario agregado correctamente", Toast.LENGTH_SHORT).show();
             }
         }, new Response.ErrorListener() {
@@ -135,6 +138,14 @@ public class NotificationsFragment extends Fragment {
         };
 
         queue.add(solicitud);
+    }
+
+    public  void limpiarCampos() {
+        campoIdentificacion.getEditText().setText("");
+        campoNombre.getEditText().setText("");
+        campoCorreo.getEditText().setText("");
+        campoRol.getEditText().setText("");
+        campoPassword.getEditText().setText("");
     }
 
     @Override
