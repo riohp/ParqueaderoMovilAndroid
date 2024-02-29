@@ -12,7 +12,7 @@ $fecha_hoy = date('Y-m-d');
 $fecha_ayer = date('Y-m-d', strtotime('-1 day'));
 
 // Consulta para obtener información de los tickets
-$consulta = $base_de_datos->prepare("SELECT rv.placa, rv.tipovehiculo, tk.horaentrada, tk.estado, COALESCE(tk.horasalida, 'NO DISPONIBLE') AS horasalida, COALESCE(tk.costototal, 'NO DISPONIBLE') AS costototal 
+$consulta = $base_de_datos->prepare("SELECT rv.placa, rv.tipovehiculo, rv.marca, rv.modelo, tk.horaentrada, tk.estado, COALESCE(tk.horasalida, 'NO DISPONIBLE') AS horasalida, COALESCE(tk.costototal, 'NO DISPONIBLE') AS costototal 
     FROM tickets tk 
     LEFT JOIN registrarvehiculos rv ON tk.idvehiculo = rv.idvehiculo 
     WHERE (DATE(tk.horaentrada) = :fecha_hoy OR tk.estado = 'activo') AND tk.idparqueadero = :idparqueadero
