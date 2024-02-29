@@ -23,6 +23,8 @@ import com.android.volley.toolbox.Volley;
 import com.example.appparking.R;
 import com.example.appparking.utils.Config;
 import com.google.android.material.button.MaterialButton;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -37,6 +39,8 @@ public class VehicleQueryActivity extends AppCompatActivity {
     EditText etpPlaca;
 
     TextView txtFieldError;
+
+    FloatingActionButton btnRegrasarVista;
 
     View viweColorError;
 
@@ -75,6 +79,16 @@ public class VehicleQueryActivity extends AppCompatActivity {
                     viweColorError.setBackground(drawable);
                     consultarVehiculo(placa);
                 }
+            }
+        });
+        eventInbuttonViewback();
+    }
+    public void eventInbuttonViewback(){
+        FloatingActionButton btnRegresarVista = findViewById(R.id.btnRegrasarVista);
+        btnRegresarVista.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
             }
         });
     }
