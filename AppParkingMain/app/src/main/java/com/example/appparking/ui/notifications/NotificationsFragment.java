@@ -50,6 +50,8 @@ public class NotificationsFragment extends Fragment {
         campoPassword = root.findViewById(R.id.etpcampoPassword);
         btnAgregarUsuario = root.findViewById(R.id.btnAgregarUsuario);
 
+
+
         autoCompleteTextView = root.findViewById(R.id.etpRol);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(requireContext(), R.array.opciones_roles, android.R.layout.simple_dropdown_item_1line);
         autoCompleteTextView.setAdapter(adapter);
