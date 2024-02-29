@@ -6,6 +6,7 @@ import android.content.SharedPreferences;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -18,6 +19,8 @@ import com.android.volley.toolbox.Volley;
 import com.example.appparking.R;
 import com.example.appparking.navbar.navbar_main;
 import com.example.appparking.utils.Config;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -32,6 +35,7 @@ public class QueryParking extends AppCompatActivity implements AdaptadorQueryPar
     AdaptadorQueryParking adaptador;
     List<Parkings> listaParkings = new ArrayList<>();;
 
+    FloatingActionButton btnParkingBack;
     Config dataConfig;
 
     @Override
@@ -48,6 +52,8 @@ public class QueryParking extends AppCompatActivity implements AdaptadorQueryPar
         adaptador.setOnItemClickListener(this);
         rvParkingQuery.setAdapter(adaptador);
         rvParkingQuery.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+
+        eventInbuttonViewback();
     }
 
     public void onItemClick(int position) {
@@ -56,6 +62,17 @@ public class QueryParking extends AppCompatActivity implements AdaptadorQueryPar
 
         sharedPref(parking.getNombre(), parking.getDireccion(), parking.getIdparking());
     }
+
+    public void eventInbuttonViewback(){
+        FloatingActionButton btnParkingBack = findViewById(R.id.btnParkingBack);
+        btnParkingBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+    }
+
 
     public void cargarParkings(){
         RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
