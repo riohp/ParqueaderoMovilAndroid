@@ -17,6 +17,7 @@
     import com.android.volley.toolbox.StringRequest;
     import com.android.volley.toolbox.Volley;
     import com.example.appparking.MainActivity;
+    import com.example.appparking.QueryParking.QueryParking;
     import com.example.appparking.R;
     import com.example.appparking.navbar.navbar_main;
     import com.example.appparking.ui.home.HomeFragment;
@@ -165,9 +166,10 @@
             editor.putString("id_usuario", id);
             editor.putString("documento", documento);
             editor.putString("nombre", nombre);
+
             editor.apply();
 
-            Intent intencion = new Intent(getApplicationContext(), navbar_main.class );
+            Intent intencion = new Intent(getApplicationContext(), QueryParking.class );
             startActivity(intencion);
             finish();
         }
