@@ -5,8 +5,6 @@
         android:width="2dp"
         />
 
-
-
     <corners
         android:radius="20dp"/>
 

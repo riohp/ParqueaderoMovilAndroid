@@ -8,7 +8,7 @@
 
     <item
             android:id="@+id/navigation_dashboard"
-            android:icon="@drawable/icon_buscar"
+            android:icon="@drawable/users_02"
             android:title="@string/title_search"/>
 
     <item
@@ -20,4 +20,9 @@
             android:id="@+id/navigation_assigment"
             android:icon="@drawable/collaborations_idea__collaborations_idea_work"
             android:title="@string/title_assigment"/>
+
+    <item
+            android:id="@+id/navigation_parking"
+            android:icon="@drawable/parking"
+            android:title="@string/title_parking"/>
 </menu>

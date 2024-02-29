@@ -28,4 +28,10 @@
             android:name="com.example.appparking.ui.assingment.AssigmentFragment"
             android:label="@string/title_assigment"
             tools:layout="@layout/fragment_assigment"/>
+
+    <fragment
+            android:id="@+id/navigation_parking"
+            android:name="com.example.appparking.ui.parking.ParkingFragment"
+            android:label="@string/title_parking"
+            tools:layout="@layout/fragment_parking"/>
 </navigation>

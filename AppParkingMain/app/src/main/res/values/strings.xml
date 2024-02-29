@@ -1,9 +1,10 @@
 <resources>
     <string name="app_name">AppPArking</string>
     <string name="title_home">Inicio</string>
-    <string name="title_search">Buscar</string>
+    <string name="title_search">Usuarios</string>
     <string name="title_AddUser">Agregar usuario</string>
     <string name="title_assigment">Asignar</string>
+    <string name="title_parking">Parqueaderos</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_query_result">QueryResultActivity</string>

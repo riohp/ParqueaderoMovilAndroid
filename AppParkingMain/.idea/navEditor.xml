@@ -56,6 +56,18 @@
                       </LayoutPositions>
                     </value>
                   </entry>
+                  <entry key="navigation_parking">
+                    <value>
+                      <LayoutPositions>
+                        <option name="myPosition">
+                          <Point>
+                            <option name="x" value="-234" />
+                            <option name="y" value="196" />
+                          </Point>
+                        </option>
+                      </LayoutPositions>
+                    </value>
+                  </entry>
                 </map>
               </option>
             </LayoutPositions>
