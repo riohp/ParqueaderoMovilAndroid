@@ -66,6 +66,12 @@ public class CreateParking extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 agregarNuevoParqueadero();
+
+                if (etqNombreParking.getEditText().getText().toString().isEmpty() || etqDireccion.getEditText().getText().toString().isEmpty() || etqTarifaCarro.getEditText().getText().toString().isEmpty() || etqTarifaMoto.getEditText().getText().toString().isEmpty() || etqTarifaCamioneta.getEditText().getText().toString().isEmpty() || etqTarifaCamion.getEditText().getText().toString().isEmpty()) {
+                    Toast.makeText(CreateParking.this, "Todos los campos son obligatorios", Toast.LENGTH_SHORT).show();
+                } else {
+                    agregarNuevoParqueadero();
+                }
             }
         });
     }
