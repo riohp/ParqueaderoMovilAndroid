@@ -92,7 +92,7 @@ public class SearchVehicleFragment extends Fragment {
                 Vehiculo vehiculo = new Vehiculo(
                         lista.getJSONObject(i).getString("placa"),
                         lista.getJSONObject(i).getString("tipovehiculo"),
-                        lista.getJSONObject(i).getString("horaentrada"),
+                        lista.getJSONObject(i).getString("marca"),
                         lista.getJSONObject(i).getString("estado")
                 );
                 listaVehiculos.add(vehiculo);
