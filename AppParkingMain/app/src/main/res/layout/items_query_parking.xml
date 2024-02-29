@@ -1,6 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent">
+<androidx.cardview.widget.CardView
+        android:id="@+id/cardViewParkingQuery"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        app:cardElevation="4dp"
+        android:layout_margin="2dp"
+        app:cardCornerRadius="20dp"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                  android:orientation="vertical"
+                  android:layout_marginLeft="5dp"
+                  android:padding="10dp"
+    >
+
+        <TextView
+                android:id="@+id/etqNombreParking"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Parqueadero Don Ramon"
+                android:fontFamily="@font/poppins_bold"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+        >
+        </TextView>
+
+        <TextView
+                android:id="@+id/etqDirrecionparking"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Calle 27 Cr8 #25-45"
+                android:fontFamily="@font/poppins_regular"
+                android:textColor="@color/md_theme_light_onSurfaceVariant"
+                android:textSize="20dp"
+        >
+        </TextView>
+    </LinearLayout>
+
+
+</androidx.cardview.widget.CardView>

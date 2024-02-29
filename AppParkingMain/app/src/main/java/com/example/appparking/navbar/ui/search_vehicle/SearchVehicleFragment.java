@@ -1,5 +1,7 @@
 package com.example.appparking.navbar.ui.search_vehicle;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -24,6 +26,9 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -46,11 +51,6 @@ public class SearchVehicleFragment extends Fragment {
         recyclerVehiculos = root.findViewById(R.id.recyclerVehiculos);
         dataConfig = new Config(requireActivity().getApplicationContext());
 
-       //List<Vehiculo> listaVehiculos = new ArrayList<>();
-       //listaVehiculos.add(new Vehiculo("ABC123", "moto", "Yamaha", "2021"));
-       //listaVehiculos.add(new Vehiculo("ABC123", "carro", "Chevrolet", "2021"));
-       //listaVehiculos.add(new Vehiculo("ABC123", "carro", "Chevrolet", "2021"));
-
        recyclerVehiculos = root.findViewById(R.id.recyclerVehiculos);
        recyclerVehiculos.setLayoutManager(new LinearLayoutManager((getActivity().getApplicationContext())));
 
@@ -60,7 +60,9 @@ public class SearchVehicleFragment extends Fragment {
     }
 
     private void obtenerVehiculos(){
-        String url = dataConfig.getEndPoint("/getAll/obtenerAll.php?idpark=1");
+        String id_paring = id_parking();
+
+        String url = dataConfig.getEndPoint("/getAll/obtenerAll.php?idpark="+id_paring);
 
         StringRequest solicitud = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
             @Override
@@ -81,6 +83,11 @@ public class SearchVehicleFragment extends Fragment {
         queue.add(solicitud);
     }
 
+    private String id_parking() {
+        SharedPreferences preferences = requireActivity().getSharedPreferences("datos_parking", Context.MODE_PRIVATE);
+        return preferences.getString("id_parking", "0");
+    }
+
 
     public List<Vehiculo> procesarRespuesta(String response) {
         List<Vehiculo> listaVehiculos = new ArrayList<>();
@@ -88,12 +95,16 @@ public class SearchVehicleFragment extends Fragment {
             JSONObject respuesta = new JSONObject(response);
             JSONArray lista = respuesta.getJSONArray("registros");
             for (int i = 0; i<lista.length(); i++){
+                String marca = lista.getJSONObject(i).getString("marca");
+                String modelo = lista.getJSONObject(i).getString("modelo");
+                String marcamodelo = marca+" "+modelo;
+                String hora = horas(lista.getJSONObject(i).getString("horaentrada"));
 
                 Vehiculo vehiculo = new Vehiculo(
                         lista.getJSONObject(i).getString("placa"),
                         lista.getJSONObject(i).getString("tipovehiculo"),
-                        lista.getJSONObject(i).getString("marca"),
-                        lista.getJSONObject(i).getString("estado")
+                        marcamodelo,
+                        hora
                 );
                 listaVehiculos.add(vehiculo);
             }
@@ -104,6 +115,20 @@ public class SearchVehicleFragment extends Fragment {
         return listaVehiculos;
     }
 
+
+    public String horas(String fecha){
+        String result = "N/A";
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+            LocalDateTime horaemtrada = LocalDateTime.parse(fecha, DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
+
+            LocalDateTime horaActual = LocalDateTime.now();
+
+            long diferenciaHoras = ChronoUnit.HOURS.between(horaemtrada, horaActual);
+
+            result = "Hace " + diferenciaHoras + " horas";
+        }
+        return result;
+    }
 
     @Override
     public void onDestroyView() {

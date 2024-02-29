@@ -53,13 +53,14 @@ public class Adaptadordevehiculos extends RecyclerView.Adapter<Adaptadordevehicu
         TextView etqPlaca;
         ImageView etpTipo;
         TextView etqMarca;
-        TextView etpModelo;
+        TextView etqHoraIngreso;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             etqPlaca = itemView.findViewById(R.id.etqPlaca);
             etpTipo = itemView.findViewById(R.id.etpTipo);
             etqMarca = itemView.findViewById(R.id.etqMarca);
+            etqHoraIngreso = itemView.findViewById(R.id.etqHoraIngreso);
             //etpModelo = itemView.findViewById(R.id.etpModelo);
 
         }
@@ -67,7 +68,7 @@ public class Adaptadordevehiculos extends RecyclerView.Adapter<Adaptadordevehicu
         public void cargarDatos(Vehiculo temporal) {
             etqPlaca.setText(temporal.getPlaca());
             etqMarca.setText(temporal.getMarca());
-            //etpModelo.setText(temporal.getModelo());
+            etqHoraIngreso.setText(temporal.getModelo());
             if (temporal.getTipo().equals("carro")){
                 etpTipo.setImageResource(R.drawable.icon_car_vendedor);
             }else if (temporal.getTipo().equals("moto")){

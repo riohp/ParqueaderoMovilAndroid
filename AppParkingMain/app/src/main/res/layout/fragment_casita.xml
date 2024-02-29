@@ -105,10 +105,10 @@
                     </TextView>
 
                     <TextView
+                            android:id="@+id/etqNombreParking"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Parqueadero Don
-                                        Ramon"
+                        android:text="Parqueadero Don Ramon"
                         android:fontFamily="@font/poppins_black"
                         android:textSize="37dp"
                         android:textColor="@color/black"
@@ -116,6 +116,7 @@
                     </TextView>
 
                     <TextView
+                            android:id="@+id/etqDirrecionparking"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Calle 27 Cr8 #25-45"
@@ -134,7 +135,7 @@
                         >
 
                         <com.google.android.material.button.MaterialButton
-                            android:id="@+id/btnAsignar"
+                            android:id="@+id/btnCambiarParking"
                             android:layout_width="wrap_content"
                             android:layout_height="48dp"
                             android:background="@null"
