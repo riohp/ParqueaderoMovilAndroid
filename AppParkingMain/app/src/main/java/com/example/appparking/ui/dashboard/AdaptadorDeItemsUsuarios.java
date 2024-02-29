@@ -51,12 +51,9 @@ public class AdaptadorDeItemsUsuarios extends RecyclerView.Adapter<AdaptadorDeIt
 
         this.listaUsuarios = listaUsuarios;
         notifyDataSetChanged();
-
-
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-
         TextView etqIdentificacion;
         TextView etpNombres;
         TextView etpEmail;
@@ -88,6 +85,5 @@ public class AdaptadorDeItemsUsuarios extends RecyclerView.Adapter<AdaptadorDeIt
             }
         }
     }
-
 }
 
