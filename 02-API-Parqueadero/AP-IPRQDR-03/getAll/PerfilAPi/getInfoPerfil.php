@@ -6,7 +6,7 @@
     include '../../Conexion.php';
 
     if (!empty($_POST['documento'])) {
-	    $consulta = $base_de_datos->query("SELECT usere.idusuario, usere.nombreusuario AS NombreVendedor, p.nombreparqueadero AS NombreParqueadero
+	    $consulta = $base_de_datos->query("SELECT usere.idusuario, usere.nombreusuario AS NombreVendedor, p.idparqueadero ,p.direccion , p.nombreparqueadero AS NombreParqueadero
                                             FROM usuarios usere
                                             INNER JOIN asignacionvendedorparqueadero avp ON usere.idusuario = avp.idusuario
                                             INNER JOIN parqueaderos p ON avp.idparqueadero = p.idparqueadero
