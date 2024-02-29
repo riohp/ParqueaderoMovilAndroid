@@ -77,6 +77,7 @@ public class AssigmentFragment extends Fragment {
                 if (!vendedorSeleccionado.isEmpty() && !parqueaderoSeleccionado.isEmpty()) {
 
                     asignarVendedorAParqueadero(vendedorSeleccionado, parqueaderoSeleccionado);
+                    limpiarCampos();
                 } else {
 
                     Toast.makeText(requireContext(), "Por favor, selecciona un vendedor y un parqueadero", Toast.LENGTH_SHORT).show();
@@ -121,7 +122,7 @@ public class AssigmentFragment extends Fragment {
 
                                 // Almacenar el ID y el nombre del parqueadero
                                 parqueaderosList.add(parqueadero);
-                                idParqueaderosList.add(idParqueadero); // Agrega esta lista también
+                                idParqueaderosList.add(idParqueadero);
                             }
 
                             // Poblar los selectores con los datos obtenidos
@@ -188,6 +189,11 @@ public class AssigmentFragment extends Fragment {
         };
 
         queue.add(stringRequest);
+    }
+
+    public void limpiarCampos() {
+        autoCompleteTextViewVendedor.setText("");
+        autoCompleteTextViewParqueadero.setText("");
     }
 
     @Override
