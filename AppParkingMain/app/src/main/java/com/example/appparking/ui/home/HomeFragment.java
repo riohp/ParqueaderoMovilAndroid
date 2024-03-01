@@ -1,6 +1,7 @@
 package com.example.appparking.ui.home;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -19,10 +20,12 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.appparking.DetailsApp.MainDetails;
 import com.example.appparking.R;
 import com.example.appparking.databinding.FragmentHomeBinding;
 import com.example.appparking.utils.Config;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -43,6 +46,7 @@ public class HomeFragment extends Fragment {
     TextView etqGnanciasAprox;
     TextView etqGnanciasPorc;
 
+    FloatingActionButton btnAllopcions;
 
     private FragmentHomeBinding binding;
 
@@ -62,6 +66,12 @@ public class HomeFragment extends Fragment {
         etqName = root.findViewById(R.id.etqName);
         etqGnanciasAprox = root.findViewById(R.id.etqGnanciasAprox);
         etqGnanciasPorc = root.findViewById(R.id.etqGnanciasPorc);
+        btnAllopcions = root.findViewById(R.id.btnAllopcions);
+
+        btnAllopcions.setOnClickListener(v -> {
+            Intent intent = new Intent(requireContext(), MainDetails.class);
+            startActivity(intent);
+        });
 
         SharedPreferences sharedPreferences = requireContext().getSharedPreferences("app_parking", Context.MODE_PRIVATE);
         String documento = sharedPreferences.getString("documento", "");
