@@ -30,6 +30,13 @@ public class AdaptadorItemsParking extends RecyclerView.Adapter<AdaptadorItemsPa
         return new ViewHolder(view);
     }
 
+    public AdaptadorItemsParking(Context contexto, List<Parking> listaParking) {
+        this.contexto = contexto;
+        this.listaParking = listaParking;
+    }
+
+
+
     @Override
     public void onBindViewHolder(@NotNull AdaptadorItemsParking.ViewHolder holder, int position) {
         Parking temporal = listaParking.get(position);
