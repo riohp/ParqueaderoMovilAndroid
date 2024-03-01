@@ -48,6 +48,12 @@ public class Adaptadordevehiculos extends RecyclerView.Adapter<Adaptadordevehicu
         return listaVehiculos.size();
     }
 
+    public void actualizarVehiculos(List<Vehiculo> listaVehiculos) {
+
+        this.listaVehiculos = listaVehiculos;
+        notifyDataSetChanged();
+    }
+
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         TextView etqPlaca;
