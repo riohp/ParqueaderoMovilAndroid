@@ -1,7 +1,5 @@
 package com.example.appparking.ui.dashboard;
 
-import java.util.List;
-
 public class Usuario {
     String identificacion;
     String nombres;

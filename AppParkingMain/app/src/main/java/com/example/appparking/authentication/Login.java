@@ -17,36 +17,39 @@
     import com.android.volley.toolbox.StringRequest;
     import com.android.volley.toolbox.Volley;
     import com.example.appparking.MainActivity;
+    import com.example.appparking.QueryParking.QueryParking;
     import com.example.appparking.R;
     import com.example.appparking.navbar.navbar_main;
     import com.example.appparking.ui.home.HomeFragment;
     import com.example.appparking.utils.Config;
+    import com.google.android.material.floatingactionbutton.FloatingActionButton;
     import com.google.android.material.textfield.TextInputLayout;
-    
+
     import org.json.JSONException;
     import org.json.JSONObject;
-    
+
     import java.util.HashMap;
     import java.util.Map;
-    
+
     public class Login extends AppCompatActivity {
-    
+
         TextInputLayout campoEmail;
         TextInputLayout campoPassword;
         Button btnIniciarSesion;
+        FloatingActionButton btnLoginBack;
         Config dataConfig;
-    
+
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_login);
-    
+
             campoEmail = findViewById(R.id.etqCampoEmail);
             campoPassword = findViewById(R.id.etqCampoPassword);
             btnIniciarSesion = findViewById(R.id.btnIniciarSesion);
-    
+
             dataConfig = new Config(getApplicationContext());
-    
+
             btnIniciarSesion.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -60,8 +63,20 @@
                     }
                 }
             });
+
+            eventInButtonLoginBack();
         }
-    
+
+        private void eventInButtonLoginBack(){
+            btnLoginBack = findViewById(R.id.btnLoginBack);
+            btnLoginBack.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    finish();
+                }
+            });
+        }
+
         private void authentication(String email, String password) {
             System.out.println("ENTRO A AUTHENTICATION");
     
@@ -151,9 +166,10 @@
             editor.putString("id_usuario", id);
             editor.putString("documento", documento);
             editor.putString("nombre", nombre);
+
             editor.apply();
 
-            Intent intencion = new Intent(getApplicationContext(), navbar_main.class );
+            Intent intencion = new Intent(getApplicationContext(), QueryParking.class );
             startActivity(intencion);
             finish();
         }

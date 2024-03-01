@@ -7,6 +7,7 @@ public class Vehiculo {
     String marca;
     String modelo;
 
+
     public Vehiculo(String placa, String tipo, String marca, String modelo) {
         this.placa = placa;
         this.tipo = tipo;
@@ -44,5 +45,9 @@ public class Vehiculo {
 
     public void setModelo(String modelo) {
         this.modelo = modelo;
+    }
+
+    public String getMarcaModelo() {
+        return modelo + " " + marca;
     }
 }

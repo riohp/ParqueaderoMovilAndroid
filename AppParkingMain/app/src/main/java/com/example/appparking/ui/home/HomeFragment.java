@@ -83,7 +83,6 @@ public class HomeFragment extends Fragment {
 
     public void cambiarContenido(String documento) {
         queryInfoTicket(documento);
-
     }
 
     public void queryInfoTicket(String documento) {

@@ -1,18 +1,19 @@
 package com.example.appparking.ui.notifications;
 
 import android.os.Bundle;
+import android.text.InputType;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
+import org.json.JSONObject;
+import org.json.JSONException;
 import android.widget.Button;
-import android.widget.TextView;
 import android.widget.Toast;
-
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewModelProvider;
-
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -30,9 +31,11 @@ import java.util.Map;
 public class NotificationsFragment extends Fragment {
 
     private FragmentNotificationsBinding binding;
+    private AutoCompleteTextView autoCompleteTextView;
     private TextInputLayout campoIdentificacion, campoNombre, campoCorreo, campoRol, campoPassword;
     private Button btnAgregarUsuario;
-    Config dataConfig;
+    private Config dataConfig;
+
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
@@ -47,6 +50,12 @@ public class NotificationsFragment extends Fragment {
         campoRol = root.findViewById(R.id.etpcampoRol);
         campoPassword = root.findViewById(R.id.etpcampoPassword);
         btnAgregarUsuario = root.findViewById(R.id.btnAgregarUsuario);
+        //solo numeros
+        campoIdentificacion.getEditText().setInputType(InputType.TYPE_CLASS_NUMBER);
+
+        autoCompleteTextView = root.findViewById(R.id.etpRol);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(requireContext(), R.array.opciones_roles, android.R.layout.simple_dropdown_item_1line);
+        autoCompleteTextView.setAdapter(adapter);
 
         btnAgregarUsuario.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,15 +66,46 @@ public class NotificationsFragment extends Fragment {
                 String rol = campoRol.getEditText().getText().toString();
                 String contrasena = campoPassword.getEditText().getText().toString();
 
+
                 if (TextUtils.isEmpty(identificacion) || TextUtils.isEmpty(nombre) || TextUtils.isEmpty(correo) || TextUtils.isEmpty(rol) || TextUtils.isEmpty(contrasena)) {
                     Toast.makeText(getActivity(), "Por favor, complete todos los campos", Toast.LENGTH_SHORT).show();
                 } else {
-                    agregarUsuario(identificacion, nombre, correo, rol, contrasena);
+                    verificarUsuario(identificacion, nombre, correo, rol, contrasena);
                 }
             }
         });
-
         return root;
+    }
+
+    private void verificarUsuario(String identificacion, String nombre, String correo, String rol, String contrasena) {
+        RequestQueue queue = Volley.newRequestQueue(requireActivity().getApplicationContext());
+        String url = dataConfig.getEndPoint("/Usuarios/Verificar.php");
+
+        StringRequest solicitud = new StringRequest(Request.Method.GET, url + "?identificacion=" + identificacion, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                try {
+                    JSONObject jsonResponse = new JSONObject(response);
+                    String estado = jsonResponse.getString("estado");
+
+                    if (estado.equals("existe")) {
+                        Toast.makeText(getActivity(), "El usuario ya está registrado", Toast.LENGTH_SHORT).show();
+                    } else {
+                        agregarUsuario(identificacion, nombre, correo, rol, contrasena);
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                    Toast.makeText(getActivity(), "Error al verificar usuario: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                }
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(getActivity(), "Error al verificar usuario: " + error.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        queue.add(solicitud);
     }
 
     private void agregarUsuario(String identificacion, String nombre, String correo, String rol, String contrasena) {
@@ -75,6 +115,7 @@ public class NotificationsFragment extends Fragment {
         StringRequest solicitud = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
+                limpiarCampos();
                 Toast.makeText(getActivity(), "Usuario agregado correctamente", Toast.LENGTH_SHORT).show();
             }
         }, new Response.ErrorListener() {
@@ -99,9 +140,19 @@ public class NotificationsFragment extends Fragment {
         queue.add(solicitud);
     }
 
+    public  void limpiarCampos() {
+        campoIdentificacion.getEditText().setText("");
+        campoNombre.getEditText().setText("");
+        campoCorreo.getEditText().setText("");
+        campoRol.getEditText().setText("");
+        campoPassword.getEditText().setText("");
+    }
+
     @Override
     public void onDestroyView() {
         super.onDestroyView();
         binding = null;
     }
 }
+
+

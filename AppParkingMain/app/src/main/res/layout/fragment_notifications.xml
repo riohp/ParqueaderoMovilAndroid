@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -15,19 +15,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/btnRegrasarVista"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:clickable="true"
-                android:src="@drawable/baseline_arrow_back_24"
-                app:backgroundTint="#FEFAFD"
-                app:maxImageSize="30dp"
-                app:boxStrokeColor="@android:color/black"
-                app:elevation="0dp"
-                app:fabCustomSize="48dp" />
+            android:orientation="vertical"
+            android:layout_marginTop="60dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -66,7 +55,10 @@
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content" />
+                            android:layout_height="wrap_content"
+                            android:imeOptions="actionDone"
+                            android:maxLines="1"
+                        />
 
                     </com.google.android.material.textfield.TextInputLayout>
 
@@ -88,7 +80,8 @@
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content" />
+                            android:layout_height="wrap_content"
+                            android:maxLines="1"/>
 
                     </com.google.android.material.textfield.TextInputLayout>
 
@@ -111,11 +104,12 @@
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content" />
+                            android:layout_height="wrap_content"
+                            android:maxLines="1"/>
 
                     </com.google.android.material.textfield.TextInputLayout>
 
-                    <!-- rol para elejir cendedor o admin -->
+                    <!-- rol para elejir vendedor o admin -->
                     <com.google.android.material.textfield.TextInputLayout
                         android:id="@+id/etpcampoRol"
                         style="@style/ExposedDropdownMenuWhiteWithBorder"
@@ -130,12 +124,15 @@
                         app:hintTextColor="@color/black"
                         >
 
-                        <AutoCompleteTextView
+                        <com.google.android.material.textfield.MaterialAutoCompleteTextView
                             android:id="@+id/etpRol"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:inputType="text"
-                             />
+                            android:textSize="20sp"
+                            android:backgroundTint="#FFFEFAFD"
+                            android:maxLines="1"
+                        />
                     </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -159,6 +156,7 @@
                         <com.google.android.material.textfield.TextInputEditText
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:maxLines="1"
                             >
 
                         </com.google.android.material.textfield.TextInputEditText>
@@ -169,6 +167,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="30dp"
+                        android:layout_marginBottom="30dp"
                         android:background="@android:color/black">
 
                         <Button
@@ -187,6 +186,4 @@
             </LinearLayout>
         </LinearLayout>
     </FrameLayout>
-
-
-</LinearLayout>
+</ScrollView>

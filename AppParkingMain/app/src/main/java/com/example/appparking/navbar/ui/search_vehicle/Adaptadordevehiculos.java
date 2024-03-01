@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -47,27 +48,38 @@ public class Adaptadordevehiculos extends RecyclerView.Adapter<Adaptadordevehicu
         return listaVehiculos.size();
     }
 
+    public void actualizarVehiculos(List<Vehiculo> listaVehiculos) {
+
+        this.listaVehiculos = listaVehiculos;
+        notifyDataSetChanged();
+    }
+
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         TextView etqPlaca;
-        TextView etpTipo;
-        TextView etpMarca;
-        TextView etpModelo;
+        ImageView etpTipo;
+        TextView etqMarca;
+        TextView etqHoraIngreso;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             etqPlaca = itemView.findViewById(R.id.etqPlaca);
             etpTipo = itemView.findViewById(R.id.etpTipo);
-            etpMarca = itemView.findViewById(R.id.etpMarca);
-            etpModelo = itemView.findViewById(R.id.etpModelo);
+            etqMarca = itemView.findViewById(R.id.etqMarca);
+            etqHoraIngreso = itemView.findViewById(R.id.etqHoraIngreso);
+            //etpModelo = itemView.findViewById(R.id.etpModelo);
 
         }
 
         public void cargarDatos(Vehiculo temporal) {
             etqPlaca.setText(temporal.getPlaca());
-            etpMarca.setText(temporal.getMarca());
-            etpModelo.setText(temporal.getModelo());
-            etpTipo.setText(temporal.getTipo());
+            etqMarca.setText(temporal.getMarca());
+            etqHoraIngreso.setText(temporal.getModelo());
+            if (temporal.getTipo().equals("carro")){
+                etpTipo.setImageResource(R.drawable.icon_car_vendedor);
+            }else if (temporal.getTipo().equals("moto")){
+                etpTipo.setImageResource(R.drawable.icon_motorcycle_vendedor);
+            }
         }
     }
 }

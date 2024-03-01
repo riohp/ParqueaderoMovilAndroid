@@ -74,7 +74,7 @@ public class Login extends JPanel {
         Gson gson = new Gson();
 
         JsonObject jsonObject = gson.fromJson(rjson, JsonObject.class);
-        boolean verif = jsonObject.get("status").getAsBoolean();
+        boolean verif = jsonObject.get("data").getAsBoolean();
         if(verif) {
             String rolv = jsonObject.get("rol").getAsString();
             //String estado = jsonObject.get("estado").getAsString();

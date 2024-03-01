@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardViewParking"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="4dp"
+        android:layout_margin="2dp"
+        android:backgroundTint="#F3F3F3"
+        app:strokeColor="@android:color/transparent"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+    >
+
+        <RelativeLayout
+                android:layout_width="120dp"
+                android:layout_height="100dp"
+                android:backgroundTint="#FEED78"
+                android:layout_marginRight="15dp"
+                android:background="@drawable/background_rounded_especial_4"
+                android:gravity="center"
+        >
+
+            <ImageView
+                    android:id="@+id/icon"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:backgroundTint="@color/black"
+                    android:src="@drawable/parked_car_svgrepo_com__1_"
+                    android:layout_centerInParent="true"/>
+
+            <TextView
+                    android:id="@+id/plazas_ocupadas"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/icon"
+                    android:text="8 Plazas"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/poppins_bold"
+                    android:gravity="center"
+            />
+        </RelativeLayout>
+
+       <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+           <TextView
+                   android:id="@+id/nombre_parqueadero"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:text="Parquedero A"
+                   android:textSize="25dp"
+                   android:textColor="@color/black"
+                   android:fontFamily="@font/poppins_extrabold"
+           />
+
+           <TextView
+                   android:id="@+id/direccion_parqueadero"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:text="Calle 123, Ciudad"
+                   android:textSize="15dp"
+                   android:textColor="#232429"
+                   android:fontFamily="@font/poppins_semibold"
+           />
+
+           <com.google.android.material.button.MaterialButton
+                   android:layout_width="wrap_content"
+                   android:layout_height="40dp"
+                   android:text="Ver Detalles"
+           />
+
+       </LinearLayout>
+
+
+
+    </LinearLayout>
+
+
+</com.google.android.material.card.MaterialCardView>
