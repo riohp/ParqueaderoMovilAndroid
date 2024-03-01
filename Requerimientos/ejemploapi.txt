@@ -1,0 +1,1 @@
+http://localhost//AP-IPRQDR-03/Usuarios/Obtener_Vendedores.php

@@ -7,7 +7,7 @@ header("Acess-Control-Allow-Headers: Content-Type");
 $servidor = 'localhost';
 $usuario = 'root';
 $contrasena = '';
-$nombre_de_base = 'parqueadero_deec';
+$nombre_de_base = 'prqdr_db_02';
 
 try{
    $base_de_datos = new PDO("mysql:host=$servidor;dbname=$nombre_de_base", $usuario, $contrasena);
