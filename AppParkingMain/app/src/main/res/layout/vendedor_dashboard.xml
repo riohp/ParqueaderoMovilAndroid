@@ -18,7 +18,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+           >
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -85,7 +86,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:layout_marginTop="30dp"
-
+                android:layout_marginBottom="90dp"
                 >
 
                 <LinearLayout
@@ -167,34 +168,13 @@
 
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@color/md_theme_light_yellow"
-                android:padding="10dp"
-                android:layout_marginTop="60dp"
-                android:elevation="8dp"
-                android:layout_gravity="center"
-                >
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/black"
-                    android:text="Ver lista de vehiculos"
-                    android:fontFamily="@font/poppins_extrabold"
-                    android:textSize="20dp"
-                    >
-
-                </TextView>
-
-            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
                 <ImageView
-                    android:layout_width="150dp"
+                    android:layout_width="160dp"
                     android:layout_height="160dp"
                     android:src="@drawable/camello">
 
