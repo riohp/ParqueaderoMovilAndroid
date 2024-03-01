@@ -51,4 +51,5 @@
         <item>Vendedor</item>
         <item>Administrador</item>
     </string-array>
+    <string name="title_activity_main_details">MainDetails</string>
 </resources>

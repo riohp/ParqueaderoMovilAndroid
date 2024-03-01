@@ -49,7 +49,7 @@ public class DashboardFragment extends Fragment {
         campoBusqueda = root.findViewById(R.id.campo_busqueda);
         recyclerUsuarios = root.findViewById(R.id.recyclerUsarios);
         recyclerUsuarios.setLayoutManager(new LinearLayoutManager(getActivity()));
-        adaptador = new AdaptadorDeItemsUsuarios(new ArrayList<>());
+        adaptador = new AdaptadorDeItemsUsuarios(requireContext(), new ArrayList<>());
         recyclerUsuarios.setAdapter(adaptador);
         dataConfig = new Config(requireActivity().getApplicationContext());
 
@@ -90,13 +90,14 @@ public class DashboardFragment extends Fragment {
             for (int i = 0; i < jsonArray.length(); i++) {
                 JSONObject usuarioObject = jsonArray.getJSONObject(i);
 
+                String id = usuarioObject.getString("idusuario");
                 String identificacion = usuarioObject.getString("identificacion");
                 String nombreUsuario = usuarioObject.getString("nombreusuario");
                 String correoElectronico = usuarioObject.getString("correoelectronico");
                 String estado = usuarioObject.getString("estado");
                 String rol = usuarioObject.getString("rol");
 
-                Usuario usuario = new Usuario(identificacion, nombreUsuario, correoElectronico, estado, rol);
+                Usuario usuario = new Usuario(identificacion, nombreUsuario, correoElectronico, estado, rol, id);
                 listaUsuarios.add(usuario);
             }
         } catch (JSONException e) {
