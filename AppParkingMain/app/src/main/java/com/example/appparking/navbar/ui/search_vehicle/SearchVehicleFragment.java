@@ -11,14 +11,13 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-<<<<<<< HEAD
+
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-=======
->>>>>>> dev01
+
 import android.widget.EditText;
 
 import com.android.volley.Request;
@@ -30,12 +29,9 @@ import com.android.volley.toolbox.Volley;
 import com.example.appparking.R;
 import com.example.appparking.databinding.FragmentSearchVehicleBinding;
 import com.example.appparking.utils.Config;
-<<<<<<< HEAD
 import com.google.android.material.textfield.TextInputEditText;
-
-=======
 import com.google.android.material.button.MaterialButton;
->>>>>>> dev01
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -90,14 +86,14 @@ public class SearchVehicleFragment extends Fragment implements Adaptadordevehicu
         StringRequest solicitud = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-<<<<<<< HEAD
+
                 listaCompletaVehiculos = procesarRespuesta(response);
                 adaptador = new Adaptadordevehiculos(listaCompletaVehiculos);
-=======
+
                 listaVehiculos = procesarRespuesta(response);
                 adaptador = new Adaptadordevehiculos(listaVehiculos);
                 adaptador.setOnItemClickListener(SearchVehicleFragment.this);
->>>>>>> dev01
+
                 recyclerVehiculos.setAdapter(adaptador);
             }
 
