@@ -59,7 +59,12 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+<<<<<<< HEAD
                     android:maxLines="1">
+=======
+                    android:maxLines="1"
+                >
+>>>>>>> dev01
 
                 </com.google.android.material.textfield.TextInputEditText>
 
@@ -84,7 +89,12 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+<<<<<<< HEAD
                     android:maxLines="1">
+=======
+                    android:maxLines="1"
+                >
+>>>>>>> dev01
 
 
                 </com.google.android.material.textfield.TextInputEditText>

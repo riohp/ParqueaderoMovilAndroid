@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="10dp"
+        android:orientation="vertical"
+        tools:context=".DetailsApp.MainDetails">
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/btnBackreto"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:clickable="true"
+            app:maxImageSize="35dp"
+            android:src="@drawable/baseline_arrow_back_24"
+            app:backgroundTint="#FDF6FE"
+            app:boxStrokeColor="@android:color/black"
+            app:elevation="0dp"
+            app:fabCustomSize="50dp"/>
+
+    <LinearLayout
+            android:id="@+id/infoCredits"
+            android:layout_marginTop="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:clickable="true">
+
+        <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginRight="5dp"
+                android:src="@drawable/alarm_duotone"
+                android:tint="#969696"
+                android:layout_marginVertical="10dp"
+                tools:ignore="UseAppTint"/>
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Información App"
+                android:textSize="20sp"
+                android:fontFamily="@font/poppins_medium"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"/>
+
+    </LinearLayout>
+
+    <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginHorizontal="15dp"
+            android:background="@android:color/darker_gray"/>
+
+    <LinearLayout
+            android:id="@+id/cerrarSesion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:clickable="true">
+
+        <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginRight="5dp"
+                android:src="@drawable/sign_out_squre_duotone_line"
+                android:tint="#FF0000"
+                android:layout_marginVertical="10dp"
+                tools:ignore="UseAppTint"/>
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cerrar Sesión"
+                android:textColor="#FF0000"
+                android:textSize="20sp"
+                android:fontFamily="@font/poppins_medium"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"/>
+
+    </LinearLayout>
+
+    <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginHorizontal="15dp"
+            android:background="@android:color/darker_gray"/>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="bottom"
+            android:orientation="vertical"
+    >
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Versión 1.0.0"
+                    android:textSize="12sp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:layout_marginTop="10dp"
+                    android:layout_gravity="center_horizontal"/>
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="© 2024 ManolosDev"
+                android:textSize="12sp"
+                android:fontFamily="@font/poppins_regular"
+
+                android:layout_marginBottom="10dp"
+                android:layout_gravity="center_horizontal"/>
+
+    </LinearLayout>
+
+</LinearLayout>

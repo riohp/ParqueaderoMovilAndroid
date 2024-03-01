@@ -10,6 +10,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.appparking.QueryParking.AdaptadorQueryParking;
 import com.example.appparking.R;
 
 import java.util.List;
@@ -18,6 +19,7 @@ public class Adaptadordevehiculos extends RecyclerView.Adapter<Adaptadordevehicu
 
     static List<Vehiculo> listaVehiculos;
 
+    private OnItemClickListener listener;
     Context contexto;
     public Adaptadordevehiculos(List<Vehiculo> listaVehiculos) {
         this.listaVehiculos = listaVehiculos;
@@ -48,12 +50,24 @@ public class Adaptadordevehiculos extends RecyclerView.Adapter<Adaptadordevehicu
         return listaVehiculos.size();
     }
 
+<<<<<<< HEAD
     public void actualizarVehiculos(List<Vehiculo> listaVehiculos) {
 
         this.listaVehiculos = listaVehiculos;
         notifyDataSetChanged();
     }
 
+=======
+    public interface OnItemClickListener {
+        void onItemClick(int position);
+    }
+
+    public void setOnItemClickListener(OnItemClickListener listener) {
+        this.listener = listener;
+    }
+
+
+>>>>>>> dev01
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         TextView etqPlaca;
@@ -68,6 +82,16 @@ public class Adaptadordevehiculos extends RecyclerView.Adapter<Adaptadordevehicu
             etqMarca = itemView.findViewById(R.id.etqMarca);
             etqHoraIngreso = itemView.findViewById(R.id.etqHoraIngreso);
             //etpModelo = itemView.findViewById(R.id.etpModelo);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    int position = getAdapterPosition();
+                    if (position != RecyclerView.NO_POSITION) {
+                        listener.onItemClick(position);
+                    }
+                }
+            });
 
         }
 

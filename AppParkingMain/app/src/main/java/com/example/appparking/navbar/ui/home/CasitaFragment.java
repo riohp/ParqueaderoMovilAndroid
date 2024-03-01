@@ -10,11 +10,14 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import com.example.appparking.DetailsApp.MainDetails;
 import com.example.appparking.QueryParking.QueryParking;
 import com.example.appparking.R;
 import com.example.appparking.databinding.FragmentCasitaBinding;
+import com.example.appparking.notFound.notfount;
 import com.example.appparking.utils.Config;
 import com.google.android.material.button.MaterialButton;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 
 public class CasitaFragment extends Fragment {
@@ -25,7 +28,9 @@ public class CasitaFragment extends Fragment {
     TextView etqNombreParking;
     TextView etqDirrecionparking;
 
-    MaterialButton btnCambiarParking;
+    FloatingActionButton btnOptions;
+
+    MaterialButton btnCambiarParking, btnVehiculos;
     private FragmentCasitaBinding binding;
 
 
@@ -42,6 +47,24 @@ public class CasitaFragment extends Fragment {
         etqNombreParking = root.findViewById(R.id.etqNombreParking);
         etqDirrecionparking = root.findViewById(R.id.etqDirrecionparking);
         btnCambiarParking = root.findViewById(R.id.btnCambiarParking);
+        btnVehiculos = root.findViewById(R.id.btnVehiculos);
+        btnOptions = root.findViewById(R.id.btnOptions);
+
+        btnOptions.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(requireContext(), MainDetails.class);
+                startActivity(intent);
+            }
+        });
+
+        btnVehiculos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(requireContext(), notfount.class);
+                startActivity(intent);
+            }
+        });
 
         SharedPreferences preferences = requireContext().getSharedPreferences("datos_parking", Context.MODE_PRIVATE);
         String nombreParking = preferences.getString("nombre_parking", "No existe la informacion");
