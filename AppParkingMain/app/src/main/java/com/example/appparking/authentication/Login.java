@@ -117,7 +117,7 @@
                             }
 
                         }else{
-                            Toast.makeText(getApplicationContext(),"Usuario no encontrado",Toast.LENGTH_LONG).show();
+                            Toast.makeText(getApplicationContext(),"Usuario no valido",Toast.LENGTH_LONG).show();
                         }
 
                     } catch (JSONException e) {
