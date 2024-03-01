@@ -73,11 +73,12 @@
             </LinearLayout>
         </LinearLayout>
         <View
-                android:id="@+id/etpEstado"
-                android:layout_width="30dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="end"
-                android:background="@color/green_lighter" />
+            android:id="@+id/etpEstado"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:layout_gravity="end"
+            android:background="@color/green_lighter" />
     </FrameLayout>
 
 

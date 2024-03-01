@@ -1,6 +1,7 @@
 package com.example.appparking.ui.dashboard;
 
 public class Usuario {
+    String id;
     String identificacion;
     String nombres;
     String email;
@@ -8,12 +9,21 @@ public class Usuario {
     String rol;
 
 
-    public Usuario(String identificacion, String nombres, String email, String estado, String rol) {
+    public Usuario(String identificacion, String nombres, String email, String estado, String rol, String id) {
         this.identificacion = identificacion;
         this.nombres = nombres;
         this.email = email;
         this.estado = estado;
         this.rol = rol;
+        this.id = id;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getNombres() {
